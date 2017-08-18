@@ -73,35 +73,3 @@ El plugin de React Dev Tools de Chrome te dirá si React está funcionando en mo
 # Vueling Seed Project
 
 Proyecto seed para desarrollos internos de Vueling.
-
-## Code Style
-
-- Todo el Javascript sigue el formato [StandardJS](https://standardjs.com/) 
-- El Sass tiene que seguir [BEM](http://getbem.com/)
-- La estructura de componentes debe seguir [Atomic Design](http://atomicdesign.bradfrost.com/)
-
-## Getting started
-
-* Instalación:
-
-    * [Node.js](http://nodejs.org): `brew install node` on OS X
-    * [Brunch](http://brunch.io): `npm install -g brunch`
-    * Clona el repo del proyecto seed git: `git clone URL_REPO`
-    * Desde dentro de la carpeta recien clonada: `npm install`, para instalar todas las dependencias
-
-* Desarrollo / Despliegue:
-
-    * `npm start` — Arranca servidor de desarrollo en http://localhost:8080
-    * `npm run build` — Genera app minimizada y optimizada para uso en producción
-
-* Install (if you don't have them):
-    * [Node.js](http://nodejs.org): `brew install node` on OS X
-    * [Brunch](http://brunch.io): `npm install -g brunch`
-    * Brunch plugins and app dependencies: `npm install`
-* Run:
-    * `npm start` — watches the project with continuous rebuild. This will also launch HTTP server with [pushState](https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Manipulating_the_browser_history).
-    * `npm run build` — builds minified project for production
-* Learn:
-    * `public/` dir is fully auto-generated and served by HTTP server.  Write your code in `app/` dir.
-    * Place static files you want to be copied from `app/assets/` to `public/`.
-    * [Brunch site](http://brunch.io), [Getting started guide](https://github.com/brunch/brunch-guide#readme)
