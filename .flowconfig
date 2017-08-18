@@ -1,0 +1,11 @@
+[ignore]
+<PROJECT_ROOT>/node_modules/.*
+<PROJECT_ROOT>/build/.*
+<PROJECT_ROOT>/scripts/.*
+
+[include]
+
+[libs]
+
+[options]
+esproposal.decorators=ignore

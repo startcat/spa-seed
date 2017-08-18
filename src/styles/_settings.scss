@@ -1,0 +1,53 @@
+/**
+ * Font Size
+ */
+
+$fontSize--base: 13px;
+
+/**
+ * Line Height
+ */
+
+$lineHeight--base: 1.2rem;
+
+/**
+ * Colors
+ */
+
+$color--main: #00d563;
+$color--black: #222;
+$color--white: #fff;
+$color--error: red;
+$color--warning: orange;
+$color--grey: #f8f8f8;
+$color--darkGrey: #666;
+
+/**
+ * Responsive Breakpoints (Mobile First)
+ */
+
+$mq--mobileLandscape: '@media only screen and (min-width : 480px)';
+$mq--tabletPortrait: '@media only screen and (min-width : 768px)';
+$mq--tabletLandscape: '@media only screen and (min-width : 1024px)';
+$mq--laptop: '@media only screen  and (min-width : 1224px) ';
+$mq--desktop: '@media only screen  and (min-width : 1824px)';
+
+/**
+ * Border Radius
+ */
+
+$borderRadius--base: 3px;
+
+/**
+ * Padding (Scale)
+ */
+
+$padding\-100: 0.1rem;
+$padding\-50: 0.25rem;
+$padding\-25: 0.5rem;
+$padding\-10: 0.75rem;
+$padding\+0: 1rem;
+$padding\+10: 1.5rem;
+$padding\+25: 2rem;
+$padding\+50: 3rem;
+$padding\+100: 4rem;
