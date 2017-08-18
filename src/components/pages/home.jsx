@@ -1,6 +1,6 @@
 import { observer } from "mobx-react";
+import Main from "../templates/main.jsx";
 
 export default observer(() => {
-  let className = "p-home";
-  return <div className={className} />;
+  return <Main className="p-home" content={"Hi from React component!"} />;
 });

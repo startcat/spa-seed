@@ -26,7 +26,7 @@ app.use("^[^.]+$", function(req, res) {
   const indexHtml = fs
     .readFileSync(path.join(config.BUILD_FOLDER, "/index.html"))
     .toString()
-    .replace("</head>", "<script src='/reload/reload.js' /></head>");
+    .replace("</head>", '<script src="/reload/reload.js"></script></head>');
   res.send(indexHtml);
 });
 

@@ -6,7 +6,7 @@ import { Router, Route } from "react-router";
 import createBrowserHistory from "history/createBrowserHistory";
 import Config from "./config";
 import State from "./state";
-import Root from "./components/root.jsx";
+import Home from "./components/pages/home.jsx";
 
 // React && Config && State (Initialization)
 
@@ -18,7 +18,7 @@ window.state = State;
 
 ReactDOM.render(
   <Router history={createBrowserHistory()}>
-    <Route path="/" component={Root} />
+    <Route path="/" component={Home} />
   </Router>,
   document.getElementById("app")
 );
