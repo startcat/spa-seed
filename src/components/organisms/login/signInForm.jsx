@@ -21,7 +21,11 @@ export default (props: Props) => {
 
   // Handlers
 
-  const onChangeHandler = () => {};
+  const onChangeHandler = () => {
+    if (validate()) {
+    } else {
+    }
+  };
 
   // Render
 
