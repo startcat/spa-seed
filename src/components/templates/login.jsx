@@ -2,14 +2,14 @@
 
 type Props = {
   className: string,
-  content: any
+  children: any
 };
 
 export default (props: Props) => {
-  let className = "t-main";
+  let className = "t-login";
   return (
     <div className={className + " " + props.className}>
-      {props.content}
+      {props.children}
     </div>
   );
 };

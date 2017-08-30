@@ -11,6 +11,7 @@ const rollup = require("rollup");
 const eslint = require("eslint");
 const babel = require("rollup-plugin-babel");
 const resolve = require("rollup-plugin-node-resolve");
+const includePaths = require("rollup-plugin-includePaths");
 const commonjs = require("rollup-plugin-commonjs");
 const replace = require("rollup-plugin-replace");
 const chalk = require("chalk");
@@ -71,6 +72,12 @@ module.exports = (options, callback) => {
                 "process.env.NODE_ENV": JSON.stringify(
                   options.production ? "production" : "development"
                 )
+              }),
+              includePaths({
+                include: {},
+                paths: ["src"],
+                external: [],
+                extensions: [".js", ".json", ".jsx"]
               }),
               resolve({ jsnext: "main" }),
               commonjs({ namedExports: { "mobx-react": ["observer"] } }),

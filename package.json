@@ -1,6 +1,6 @@
 {
   "name": "spa-seed",
-  "description": "Vueling Seed Project",
+  "description": "SPA Seed Project",
   "private": true,
   "author": "Juan Carlos Viñas <juancarlos.vinas@start.cat>",
   "version": "0.0.1",
@@ -51,6 +51,7 @@
     "rollup": "0.46.0",
     "rollup-plugin-babel": "3.0.1",
     "rollup-plugin-commonjs": "8.1.0",
+    "rollup-plugin-includepaths": "0.2.2",
     "rollup-plugin-node-resolve": "3.0.0",
     "rollup-plugin-replace": "1.1.1",
     "sass-glob-importer": "1.0.1",

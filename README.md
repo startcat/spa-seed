@@ -47,6 +47,16 @@ Antes de trabajar con este seed de proyecto, deberías conocer lo siguiente...
     * /src/components: Componentes de React, siguiendo la estructura impuesta por Atomic Design
     * 
 
+# Naming / Convenviones
+
+* Todos los componentes devuelven un único <div> que tiene como className "[p/t/o/m/a]-[componentName]"
+* Todos los nombres de los archivos, así como de los classNames se forman usando camelCase y comienzan con minus.
+* Los guiones y subguiones los usamos únicamente para generar la nomenclatura BEM
+* Usamos comentarios solo para añadir comentarios relevantes, no como separadores
+* Las páginas son las únicas que hacen de "observers" del estado
+* Los componentes se pueden organizar en subcarpetas: Por ejemplo todas las páginas relativas al login como
+  signIn, reset, forgot... podemos meterlos en /pages/login/
+
 
 # FAQ
 
@@ -70,6 +80,6 @@ completo despues de la primera vez debería ser siempre inferior a un segundo.
 El plugin de React Dev Tools de Chrome te dirá si React está funcionando en modo producción.
 
 
-# Vueling Seed Project
+## RollUp no puede hacer un namedImport porque el módulo no lo soporta (tipo mobx-react)
 
-Proyecto seed para desarrollos internos de Vueling.
+Tienes que añadir los namedExports en la configuración de rollup
