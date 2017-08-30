@@ -8,6 +8,12 @@ type Props = {
 
 export default (props: Props) => {
   let className = "a-button";
+  let classNameControl = "a-button__control";
+
+  if (props.disabled) {
+    className += " a-button--disabled";
+    classNameControl += "a-button__control--disabled";
+  }
 
   const onClickHandler = () => {
     if (props.onClick) {
@@ -17,7 +23,7 @@ export default (props: Props) => {
 
   return (
     <div className={className}>
-      <button className="a-button__control" onClick={onClickHandler}>
+      <button className={classNameControl} onClick={onClickHandler}>
         {props.children}
       </button>
     </div>
