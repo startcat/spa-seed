@@ -1,0 +1,10 @@
+.a-button {
+  &__control {
+    background-color: $color--main;
+    border: none;
+    color: $color--white;
+    border-radius: $borderRadius--base;
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+  }
+}

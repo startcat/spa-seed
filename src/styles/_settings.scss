@@ -5,6 +5,12 @@
 $fontSize--base: 13px;
 
 /**
+ * Font Families
+ */
+
+$fontFamily--base: 'Montserrat', serif;
+
+/**
  * Line Height
  */
 
@@ -14,7 +20,7 @@ $lineHeight--base: 1.2rem;
  * Colors
  */
 
-$color--main: #00d563;
+$color--main: #ff5232;
 $color--black: #222;
 $color--white: #fff;
 $color--error: red;
@@ -37,17 +43,3 @@ $mq--desktop: '@media only screen  and (min-width : 1824px)';
  */
 
 $borderRadius--base: 3px;
-
-/**
- * Padding (Scale)
- */
-
-$padding\-100: 0.1rem;
-$padding\-50: 0.25rem;
-$padding\-25: 0.5rem;
-$padding\-10: 0.75rem;
-$padding\+0: 1rem;
-$padding\+10: 1.5rem;
-$padding\+25: 2rem;
-$padding\+50: 3rem;
-$padding\+100: 4rem;

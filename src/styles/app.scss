@@ -1,21 +1,21 @@
-@import "_settings";
+@import "_settings.scss";
 
-@import "_vendor";
+@import "_vendor.scss";
 
-@import "_tools";
+@import "_tools.scss";
 
-@import "_fonts";
+@import "_fonts.scss";
 
-@import "_elements";
+@import "_elements.scss";
 
-@import "_utils";
+@import "_utils.scss";
 
-@import "components/pages/*";
+@import "components/pages/**/*.scss";
 
-@import "components/templates/*";
+@import "components/templates/**/*.scss";
 
-@import "components/organisms/*";
+@import "components/organisms/**/*.scss";
 
-@import "components/molecules/*";
+@import "components/molecules/**/*.scss";
 
-@import "components/atoms/*";
+@import "components/atoms/**/*.scss";

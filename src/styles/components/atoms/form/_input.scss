@@ -1,0 +1,13 @@
+.a-input {
+  border: 1px solid $color--main;
+  border-radius: $borderRadius--base;
+  padding: 0.5rem;
+
+  &__control {
+    border: none;
+    color: $color--black;
+    width: 100%;
+    padding: 0.5rem;
+    box-sizing: border-box;
+  }
+}

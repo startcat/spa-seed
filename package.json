@@ -58,6 +58,7 @@
     "stylelint": "8.0.0",
     "stylelint-config-recommended": "1.0.0",
     "stylelint-formatter-table": "1.0.3",
+    "stylelint-selector-bem-pattern": "1.1.1",
     "uglify-js": "3.0.27"
   }
 }
