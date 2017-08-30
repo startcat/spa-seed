@@ -1,35 +1,52 @@
 /* @flow */
 
+import { default as React } from "react";
+
 type Props = {
   type?: string,
   onChange?: Function,
   modifiers: Array<string>
 };
 
-export default (props: Props) => {
-  let className = "a-input";
-  let classNameControl = "a-input__control";
+export default class Input extends React.Component {
+  props: Props;
+  input: { value: string };
 
-  if (props.modifiers) {
-    props.modifiers.forEach(modifier => {
-      className += " a-input--" + modifier;
-      classNameControl += " a-input__control--" + modifier;
-    });
+  render() {
+    let className = "a-input";
+    let classNameControl = "a-input__control";
+
+    if (this.props.modifiers) {
+      this.props.modifiers.forEach(modifier => {
+        className += " a-input--" + modifier;
+        classNameControl += " a-input__control--" + modifier;
+      });
+    }
+
+    return (
+      <div className={className}>
+        <input
+          ref={input => {
+            this.input = input;
+          }}
+          className={classNameControl}
+          type={this.props.type || "text"}
+          onChange={this.onChangeHandler.bind(this)}
+        />
+      </div>
+    );
   }
 
-  const onChangeHandler = () => {
-    if (props.onChange) {
-      props.onChange();
+  onChangeHandler() {
+    if (this.props.onChange) {
+      this.props.onChange();
     }
-  };
+  }
 
-  return (
-    <div className={className}>
-      <input
-        className={classNameControl}
-        type={props.type || "text"}
-        onChange={onChangeHandler}
-      />
-    </div>
-  );
-};
+  get() {
+    return this.input.value;
+  }
+  set(value: string) {
+    this.input.value = value;
+  }
+}
