@@ -38,11 +38,16 @@ module.exports = (options, callback) => {
 
         const formatter = cli.getFormatter("table");
 
-        const output = formatter(report.results);
-
-        console.log(chalk.dim("[JS/JSX] Linting..."));
-        console.log(output);
-        console.log(chalk.dim("[JS/JSX] Linted"));
+        try {
+          const output = formatter(report.results);
+          console.log(chalk.dim("[JS/JSX] Linting..."));
+          console.log(output);
+          console.log(chalk.dim("[JS/JSX] Linted"));
+        } catch (e) {
+          console.log(
+            chalk.red("[JS/JSX] Linting error: " + e.message || e.toString())
+          );
+        }
 
         return cb(null);
       },

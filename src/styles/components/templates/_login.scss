@@ -1,0 +1,23 @@
+.t-login {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+
+  &__box {
+    @include centered();
+    position: relative;
+    width: 90%;
+    max-width: 50rem;
+    max-height: 30rem;
+    height: 90%;
+  }
+
+  &__logo {
+    width: 100%;
+    height: 5rem;
+    background-image: url("/img/logo.png");
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+}

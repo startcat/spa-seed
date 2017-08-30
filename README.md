@@ -3,6 +3,9 @@ TODO:
 * Empaquetar?
 * Settings para build (react, rollup...?)
 * Documentación
+* Ordenar imports
+* Ordenar propiedades de CSS
+* Rename de assets
 
 # Conocimientos Previos
 
