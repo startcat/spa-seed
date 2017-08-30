@@ -10,12 +10,12 @@ export default (props: Props) => {
   return (
     <div className={className}>
       <div className="o-signInForm__input o-signInForm__input--user">
-        <Input type="text" />
+        <Input type="text" modifiers={["center"]} />
       </div>
       <div className="o-signInForm__input o-signInForm__input--password">
-        <Input type="password" />
+        <Input type="password" modifiers={["center"]} />
       </div>
-      <div className="o-signInForm__signInButton">
+      <div className="o-signInForm__button">
         <Button>Entrar</Button>
       </div>
     </div>

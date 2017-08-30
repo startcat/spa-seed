@@ -5,9 +5,10 @@
 
   &__box {
     @include centered();
+    text-align: center;
     position: relative;
     width: 90%;
-    max-width: 50rem;
+    max-width: 30rem;
     max-height: 30rem;
     height: 90%;
   }
@@ -19,5 +20,9 @@
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
+  }
+
+  &__content {
+    padding: 1rem 0;
   }
 }

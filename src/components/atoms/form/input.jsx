@@ -2,11 +2,20 @@
 
 type Props = {
   type?: string,
-  onChange?: Function
+  onChange?: Function,
+  modifiers: Array<string>
 };
 
 export default (props: Props) => {
   let className = "a-input";
+  let classNameControl = "a-input__control";
+
+  if (props.modifiers) {
+    props.modifiers.forEach(modifier => {
+      className += " a-input--" + modifier;
+      classNameControl += " a-input__control--" + modifier;
+    });
+  }
 
   const onChangeHandler = () => {
     if (props.onChange) {
@@ -17,7 +26,7 @@ export default (props: Props) => {
   return (
     <div className={className}>
       <input
-        className="a-input__control"
+        className={classNameControl}
         type={props.type || "text"}
         onChange={onChangeHandler}
       />
