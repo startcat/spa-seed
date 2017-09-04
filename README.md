@@ -57,8 +57,9 @@ Antes de trabajar con este seed de proyecto, deberías conocer lo siguiente...
 * Los guiones y subguiones los usamos únicamente para generar la nomenclatura BEM
 * Usamos comentarios solo para añadir comentarios relevantes, no como separadores
 * Las páginas son las únicas que hacen de "observers" del estado
-* Los componentes se pueden organizar en subcarpetas: Por ejemplo todas las páginas relativas al login como
-  signIn, reset, forgot... podemos meterlos en /pages/login/
+* Los componentes se pueden organizar en subcarpetas: Por ejemplo todas las páginas relativas al login      como signIn, reset, forgot... podemos meterlos en /pages/login/
+* Todos los componentes son funcionales, excepto cuando necesitemos state o refs
+* Siempre usamos await/async
 
 
 # FAQ
@@ -81,7 +82,6 @@ completo despues de la primera vez debería ser siempre inferior a un segundo.
 ## Como se si la versión que estoy viendo está optimizada para producción
 
 El plugin de React Dev Tools de Chrome te dirá si React está funcionando en modo producción.
-
 
 ## RollUp no puede hacer un namedImport porque el módulo no lo soporta (tipo mobx-react)
 

@@ -12,11 +12,11 @@ export default (props: Props) => {
 
   if (props.disabled) {
     className += " a-button--disabled";
-    classNameControl += "a-button__control--disabled";
+    classNameControl += " a-button__control--disabled";
   }
 
   const onClickHandler = () => {
-    if (props.onClick) {
+    if (props.onClick && !props.disabled) {
       props.onClick();
     }
   };

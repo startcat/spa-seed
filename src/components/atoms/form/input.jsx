@@ -8,8 +8,11 @@ type Props = {
   modifiers: Array<string>
 };
 
-export default class Input extends React.Component {
+type State = {};
+
+export default class Input extends React.Component<void, Props, State> {
   props: Props;
+  state: State;
   input: { value: string };
 
   render() {

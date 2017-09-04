@@ -7,9 +7,11 @@
     padding: 1rem 2rem;
     text-transform: uppercase;
     cursor: pointer;
+    transition: $transition--opacity;
 
     &--disabled {
       cursor: default;
+      opacity: 0.5;
     }
   }
 }
