@@ -29,7 +29,6 @@ i18next.init(
     } else {
       // i18n Initialization
       window.t = t;
-      window.i18n = i18next;
       // Initial Render
       ReactDOM.render(
         <Router history={createBrowserHistory()}>

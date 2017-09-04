@@ -28,7 +28,6 @@
   "globals": {
     "config": true,
     "state": true,
-    "i18next": true,
     "t": true
   }
 }

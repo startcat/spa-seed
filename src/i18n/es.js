@@ -1,6 +1,6 @@
 export default {
   app: {
-    name: "EGPXO"
+    name: "Start.cat :: SPA Seed"
   },
   login: {
     enter: "Entrar"
