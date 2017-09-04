@@ -61,6 +61,8 @@ Antes de trabajar con este seed de proyecto, deberías conocer lo siguiente...
 * Los componentes se pueden organizar en subcarpetas: Por ejemplo todas las páginas relativas al login      como signIn, reset, forgot... podemos meterlos en /pages/login/
 * Todos los componentes son funcionales, excepto cuando necesitemos state o refs
 * Siempre usamos await/async
+* Todos los cambios en el stado se hacen desde "actions"
+* Sobre el STore solo hacemos lecturas del estado
 
 
 # FAQ

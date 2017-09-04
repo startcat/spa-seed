@@ -32,8 +32,7 @@ class Store {
   }
 }
 
-// Export
+// Export Singleton
 
 const singleton = new Store();
-
 export default singleton;
