@@ -3,6 +3,7 @@ export default {
     name: "Start.cat :: SPA Seed"
   },
   login: {
-    enter: "Entrar"
+    enter: "Entrar",
+    forgot: "¿Has olvidado tu contraseña?"
   }
 };

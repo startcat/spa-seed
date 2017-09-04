@@ -80,6 +80,9 @@ export default class SignInForm extends React.Component<void, Props, State> {
             }}
           />
         </div>
+        <div className="o-signInForm__forgotMessage">
+          {t("login.forgot")}
+        </div>
         <div className="o-signInForm__button">
           <Button disabled={!this.state.isValid}>
             {t("login.enter")}

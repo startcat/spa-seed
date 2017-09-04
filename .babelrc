@@ -1,5 +1,5 @@
 {
   "presets": ["es2015-rollup", "react", "stage-1"],
-  "plugins": ["transform-decorators-legacy"],
+  "plugins": ["transform-decorators-legacy", "mobx-deep-action"],
   "retainLines": true
 }

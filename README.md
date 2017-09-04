@@ -6,6 +6,7 @@ TODO:
 * Ordenar imports
 * Ordenar propiedades de CSS
 * Rename de assets
+* Tests
 
 # Conocimientos Previos
 
