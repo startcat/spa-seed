@@ -5,6 +5,7 @@ import { default as React } from "react";
 type Props = {
   type?: string,
   onChange?: Function,
+  autoFocus?: boolean,
   modifiers: Array<string>
 };
 
@@ -33,6 +34,7 @@ export default class Input extends React.Component<void, Props, State> {
             this.input = input;
           }}
           className={classNameControl}
+          autoFocus={!!this.props.autoFocus}
           type={this.props.type || "text"}
           onChange={this.onChangeHandler.bind(this)}
         />

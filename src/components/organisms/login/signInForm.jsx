@@ -5,17 +5,17 @@ import Input from "components/atoms/form/input";
 import Button from "components/atoms/form/button";
 
 type Props = {};
-type State = {
-  isValid: boolean
-};
+type State = { isValid: boolean };
 type FormFields = { user: ?string, password: ?string };
 
 export default class SignInForm extends React.Component<void, Props, State> {
+  // Private properties
   props: Props;
   state: State = { isValid: false };
-
   userInput: ?Input = null;
   passwordInput: ?Input = null;
+
+  // Private Methods
 
   getJSON = (): FormFields => {
     return {
@@ -28,9 +28,31 @@ export default class SignInForm extends React.Component<void, Props, State> {
     this.setState({ isValid: !!(json.user && json.password) });
   };
 
+  // Event Handlers
+
   onChangeHandler = () => {
     this.validate(this.getJSON());
   };
+
+  onKeyDownHandler = (e: KeyboardEvent) => {
+    if (e.key === "Enter") {
+      if (this.state.isValid) {
+        this.onEnterButtonClick();
+      }
+    }
+  };
+
+  onEnterButtonClick = () => {
+    window.alert("click");
+  };
+
+  // React LifeCycle
+
+  componentDidMount() {
+    window.addEventListener("keydown", this.onKeyDownHandler, true);
+  }
+
+  // Render
 
   render() {
     let className = "o-signInForm";
@@ -40,6 +62,7 @@ export default class SignInForm extends React.Component<void, Props, State> {
         <div className="o-signInForm__input o-signInForm__input--user">
           <Input
             type="text"
+            autoFocus={true}
             modifiers={["center"]}
             onChange={this.onChangeHandler}
             ref={input => {

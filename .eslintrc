@@ -1,9 +1,14 @@
 {
   "parser": "babel-eslint",
 
-  "extends": ["standard", "prettier", "prettier/react"],
+  "extends": [
+    "standard",
+    "prettier",
+    "prettier/react",
+    "plugin:flowtype/recommended"
+  ],
 
-  "plugins": ["react", "prettier"],
+  "plugins": ["react", "prettier", "flowtype"],
 
   "parserOptions": {
     "ecmaVersion": 2017,
