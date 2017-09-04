@@ -1,17 +1,9 @@
 /* @flow */
 
-import Store from "store.js";
+import store from "store.js";
 
-export default class Common {
-  store: typeof Store;
-
-  constructor(store: typeof Store) {
-    this.store = store;
-  }
-
-  // Actions
-
+export default {
   setLoading(value: boolean) {
-    this.store.isLoading = value;
+    store.isLoading = value;
   }
-}
+};

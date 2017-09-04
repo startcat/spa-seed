@@ -1,8 +1,10 @@
 /* @flow */
 
 import { default as React } from "react";
+import store from "store.js";
 import Input from "components/atoms/form/input";
 import Button from "components/atoms/form/button";
+import Loader from "components/atoms/loader";
 
 type Props = {};
 type State = { isValid: boolean };
@@ -57,38 +59,38 @@ export default class SignInForm extends React.Component<void, Props, State> {
   render() {
     let className = "o-signInForm";
 
-    return (
-      <div className={className}>
-        <div className="o-signInForm__input o-signInForm__input--user">
-          <Input
-            type="text"
-            autoFocus={true}
-            modifiers={["center"]}
-            onChange={this.onChangeHandler}
-            ref={input => {
-              this.userInput = input;
-            }}
-          />
-        </div>
-        <div className="o-signInForm__input o-signInForm__input--password">
-          <Input
-            type="password"
-            modifiers={["center"]}
-            onChange={this.onChangeHandler}
-            ref={input => {
-              this.passwordInput = input;
-            }}
-          />
-        </div>
-        <div className="o-signInForm__forgotMessage">
-          {t("login.forgot")}
-        </div>
-        <div className="o-signInForm__button">
-          <Button disabled={!this.state.isValid}>
-            {t("login.enter")}
-          </Button>
-        </div>
-      </div>
-    );
+    return store.isLoading
+      ? <Loader />
+      : <div className={className}>
+          <div className="o-signInForm__input o-signInForm__input--user">
+            <Input
+              type="text"
+              autoFocus={true}
+              modifiers={["center"]}
+              onChange={this.onChangeHandler}
+              ref={input => {
+                this.userInput = input;
+              }}
+            />
+          </div>
+          <div className="o-signInForm__input o-signInForm__input--password">
+            <Input
+              type="password"
+              modifiers={["center"]}
+              onChange={this.onChangeHandler}
+              ref={input => {
+                this.passwordInput = input;
+              }}
+            />
+          </div>
+          <div className="o-signInForm__forgotMessage">
+            {t("login.forgot")}
+          </div>
+          <div className="o-signInForm__button">
+            <Button disabled={!this.state.isValid}>
+              {t("login.enter")}
+            </Button>
+          </div>
+        </div>;
   }
 }

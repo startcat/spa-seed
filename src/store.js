@@ -15,7 +15,7 @@ type Session = {
 class Store {
   // Actions
 
-  common: Common;
+  common: typeof Common;
 
   // Common
 
@@ -28,10 +28,12 @@ class Store {
   // Constructor
 
   constructor() {
-    this.common = new Common(this);
+    this.common = Common;
   }
 }
 
 // Export
 
-export default new Store();
+const singleton = new Store();
+
+export default singleton;
