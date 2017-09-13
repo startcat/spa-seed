@@ -6,12 +6,17 @@ import Input from "components/atoms/form/input";
 import Button from "components/atoms/form/button";
 import Loader from "components/atoms/loader";
 
+// Types
+
 type Props = {};
 type State = { isValid: boolean };
 type FormFields = { user: ?string, password: ?string };
 
+// Class
+
 export default class SignInForm extends React.Component<void, Props, State> {
   // Private properties
+
   props: Props;
   state: State = { isValid: false };
   userInput: ?Input = null;

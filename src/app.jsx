@@ -1,7 +1,7 @@
 /* @flow */
 
 import { default as ReactDOM } from "react-dom";
-import { default as React } from "react"; // eslint-disable-line no-unused-vars
+import { default as React } from "react";
 import { Router, Route } from "react-router";
 import i18next from "i18next";
 import createBrowserHistory from "history/createBrowserHistory";
@@ -19,6 +19,8 @@ i18next.init(
     if (err) {
       window.alert(err.message || err.toString());
     } else {
+      // React (window)
+      window.React = React;
       // i18n Initialization
       window.t = t;
       // Initial Render

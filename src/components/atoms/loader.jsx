@@ -6,7 +6,7 @@ export default (props: Props) => {
   let className = "a-loader";
   return (
     <div className={className}>
-      <img src="/img/loader.svg" />
+      <img className="a-loader__image" src="/img/loader.svg" />
     </div>
   );
 };

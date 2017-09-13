@@ -63,7 +63,6 @@ Antes de trabajar con este seed de proyecto, deberías conocer lo siguiente...
 * Sobre el Store solo hacemos lecturas del estado
 * Todo el asincronismo lo tratamos con async/await
 
-
 # FAQ
 
 ## ¿Como añado una imagen o cualquier otro recurso estático?

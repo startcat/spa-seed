@@ -2,7 +2,7 @@
 
 import { observable } from "mobx";
 import Common from "actions/common";
-import type { Session } from "types/store/session";
+import type { Session } from "types/domain/session";
 
 // Store
 
@@ -13,7 +13,7 @@ class Store {
 
   // Common
 
-  @observable isLoading: boolean = false;
+  @observable isLoading: boolean = true;
 
   // Login
 
