@@ -2,13 +2,7 @@
 
 import { observable } from "mobx";
 import Common from "actions/common";
-
-// Types
-
-type Session = {
-  user: string,
-  token: string
-};
+import type { Session } from "types/store/session";
 
 // Store
 
@@ -35,4 +29,5 @@ class Store {
 // Export Singleton
 
 const singleton = new Store();
+
 export default singleton;

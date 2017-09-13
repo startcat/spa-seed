@@ -49,20 +49,19 @@ Antes de trabajar con este seed de proyecto, deberías conocer lo siguiente...
 
     * /src/assets: Contenido estático del site. Se copian tal cual en /build
     * /src/components: Componentes de React, siguiendo la estructura impuesta por Atomic Design
-    * 
 
 # Naming / Convenviones
 
 * Todos los componentes devuelven un único <div> que tiene como className "[p/t/o/m/a]-[componentName]"
-* Todos los nombres de los archivos, así como de los classNames se forman usando camelCase y comienzan con minus.
+* Todos los nombres de los archivos, así como de los classNames se forman usando camelCase y comienzan    con minus.
 * Los guiones y subguiones los usamos únicamente para generar la nomenclatura BEM
-* Usamos comentarios solo para añadir comentarios relevantes, no como separadores
 * Las páginas son las únicas que hacen de "observers" del estado
 * Los componentes se pueden organizar en subcarpetas: Por ejemplo todas las páginas relativas al login      como signIn, reset, forgot... podemos meterlos en /pages/login/
 * Todos los componentes son funcionales, excepto cuando necesitemos state o refs
 * Siempre usamos await/async
 * Todos los cambios en el stado se hacen desde "actions"
-* Sobre el STore solo hacemos lecturas del estado
+* Sobre el Store solo hacemos lecturas del estado
+* Todo el asincronismo lo tratamos con async/await
 
 
 # FAQ
