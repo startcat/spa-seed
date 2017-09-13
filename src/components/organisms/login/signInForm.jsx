@@ -1,14 +1,13 @@
 /* @flow */
 
 import { default as React } from "react";
-import store from "store.js";
 import Input from "components/atoms/form/input";
 import Button from "components/atoms/form/button";
 import Loader from "components/atoms/loader";
 
 // Types
 
-type Props = {};
+type Props = { isLoading: boolean };
 type State = { isValid: boolean };
 type FormFields = { user: ?string, password: ?string };
 
@@ -64,7 +63,7 @@ export default class SignInForm extends React.Component<void, Props, State> {
   render() {
     let className = "o-signInForm";
 
-    return store.isLoading
+    return this.props.isLoading
       ? <Loader />
       : <div className={className}>
           <div className="o-signInForm__input o-signInForm__input--user">

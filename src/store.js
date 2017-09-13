@@ -23,6 +23,9 @@ class Store {
 
   constructor() {
     this.common = Common;
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 5000);
   }
 }
 
