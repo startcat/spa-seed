@@ -31,8 +31,6 @@
   },
 
   "globals": {
-    "config": true,
-    "store": true,
     "t": true
   }
 }

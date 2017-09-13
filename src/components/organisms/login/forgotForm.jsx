@@ -5,34 +5,33 @@ import { Link } from "react-router-dom";
 import Input from "components/atoms/form/input";
 import Button from "components/atoms/form/button";
 import Loader from "components/atoms/loader";
+import validate from "utils/validate";
 
 // Types
 
-type Props = { isLoading: boolean };
+type Props = {};
 type State = { isValid: boolean };
-type FormFields = { user: ?string, password: ?string };
+type FormFields = { email: ?string };
 
 // Class
 
-export default class SignInForm extends React.Component<void, Props, State> {
+export default class ForgotForm extends React.Component<void, Props, State> {
   // Private properties
 
   props: Props;
   state: State = { isValid: false };
-  userInput: ?Input = null;
-  passwordInput: ?Input = null;
+  emailInput: ?Input = null;
 
   // Private Methods
 
   getJSON = (): FormFields => {
     return {
-      user: this.userInput && this.userInput.get(),
-      password: this.passwordInput && this.passwordInput.get()
+      email: this.emailInput && this.emailInput.get()
     };
   };
 
   validate = (json: FormFields) => {
-    this.setState({ isValid: !!(json.user && json.password) });
+    this.setState({ isValid: validate.email(json.email) });
   };
 
   // Event Handlers
@@ -62,7 +61,7 @@ export default class SignInForm extends React.Component<void, Props, State> {
   // Render
 
   render() {
-    let className = "o-signInForm";
+    let className = "o-forgotForm";
 
     return this.props.isLoading
       ? <Loader />
@@ -74,28 +73,18 @@ export default class SignInForm extends React.Component<void, Props, State> {
               modifiers={["center"]}
               onChange={this.onChangeHandler}
               ref={input => {
-                this.userInput = input;
-              }}
-            />
-          </div>
-          <div className="o-signInForm__input o-signInForm__input--password">
-            <Input
-              type="password"
-              modifiers={["center"]}
-              onChange={this.onChangeHandler}
-              ref={input => {
-                this.passwordInput = input;
+                this.emailInput = input;
               }}
             />
           </div>
           <div className="o-signInForm__forgotMessage">
-            <Link to={"/login/forgot"}>
-              {t("login.forgot")}
+            <Link to="/">
+              {t("login.justRemember")}
             </Link>
           </div>
           <div className="o-signInForm__button">
             <Button disabled={!this.state.isValid}>
-              {t("login.enter")}
+              {t("login.resetPassword")}
             </Button>
           </div>
         </div>;

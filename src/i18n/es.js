@@ -4,6 +4,8 @@ export default {
   },
   login: {
     enter: "Entrar",
-    forgot: "¿Has olvidado tu contraseña?"
+    forgot: "¿Has olvidado tu contraseña?",
+    justRemember: "¡Ya me he acordado!",
+    resetPassword: "Resetear contraseña"
   }
 };

@@ -2,11 +2,11 @@
 
 import { default as ReactDOM } from "react-dom";
 import { default as React } from "react";
-import { Router, Route } from "react-router";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import i18next from "i18next";
-import createBrowserHistory from "history/createBrowserHistory";
 import session from "domain/session";
-import SignIn from "components/pages/login/signIn.jsx";
+import SignIn from "components/pages/login/signIn";
+import Forgot from "components/pages/login/forgot";
 import es from "i18n/es.js";
 
 i18next.init(
@@ -35,9 +35,12 @@ i18next.init(
       // Initial Render
 
       ReactDOM.render(
-        <Router history={createBrowserHistory()}>
-          <Route path="/" component={SignIn} />
-        </Router>,
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/" component={SignIn} />
+            <Route exact path="/login/forgot" component={Forgot} />
+          </Switch>
+        </BrowserRouter>,
         document.getElementById("app")
       );
     }
