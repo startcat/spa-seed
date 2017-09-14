@@ -84,7 +84,7 @@ export default class ForgotForm extends React.Component<void, Props, State> {
           </div>
           <div className="o-signInForm__button">
             <Button disabled={!this.state.isValid}>
-              {t("login.resetPassword")}
+              {t("login.reset")}
             </Button>
           </div>
         </div>;

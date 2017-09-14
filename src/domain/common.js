@@ -4,7 +4,7 @@ import { observable } from "mobx";
 
 // Store
 
-class Common {
+class Domain {
   // Properties
 
   @observable isLoading: boolean = true;
@@ -18,6 +18,6 @@ class Common {
 
 // Export Singleton
 
-const singleton = new Common();
+const singleton = new Domain();
 
 export default singleton;

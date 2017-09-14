@@ -6,6 +6,6 @@ export default {
     enter: "Entrar",
     forgot: "¿Has olvidado tu contraseña?",
     justRemember: "¡Ya me he acordado!",
-    resetPassword: "Resetear contraseña"
+    reset: "Resetear"
   }
 };

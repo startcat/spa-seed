@@ -2,10 +2,11 @@
 
 import { observable } from "mobx";
 import common from "domain/common";
+import type { Session } from "domain/types/session/session";
 
 // Store
 
-class Session {
+class Domain {
   // Properties
 
   @observable session: ?Session = null;
@@ -24,6 +25,6 @@ class Session {
 
 // Export Singleton
 
-const singleton = new Session();
+const singleton = new Domain();
 
 export default singleton;
