@@ -11,6 +11,12 @@ export default new class {
 
   @observable session: ?Session = null;
 
+  // Initialization
+
+  constructor() {
+    this.check();
+  }
+
   // Actions
 
   check() {

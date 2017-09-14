@@ -4,7 +4,6 @@ import { default as ReactDOM } from "react-dom";
 import { default as React } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import i18next from "i18next";
-import session from "domain/session";
 import SignIn from "components/pages/login/signIn";
 import Forgot from "components/pages/login/forgot";
 import Reset from "components/pages/login/reset";
@@ -29,10 +28,6 @@ i18next.init(
       // i18n Initialization
 
       window.t = t;
-
-      // Initializations
-
-      session.check();
 
       // Initial Render
 
