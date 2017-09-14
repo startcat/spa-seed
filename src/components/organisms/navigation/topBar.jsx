@@ -8,5 +8,11 @@ type Props = {
 
 export default (props: Props) => {
   let className = "o-topBar";
-  return <div className={className} />;
+  return (
+    <div className={className}>
+      <div className="o-topBar__logoContainer">
+        <div className="o-topBar__logo" />
+      </div>
+    </div>
+  );
 };

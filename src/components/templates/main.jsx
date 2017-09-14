@@ -8,7 +8,7 @@ type Props = {
 };
 
 export default (props: Props) => {
-  let className = "t-main" + " " + props.className;
+  let className = "t-main " + props.className;
   return (
     <div className={className}>
       <div className="t-main__sideBar">
