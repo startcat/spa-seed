@@ -11,7 +11,7 @@ export default observer(() => {
     <Main
       className="p-dashboard"
       sideBar={<SideBar items={ui.sideBarItems} />}
-      topBar={<TopBar state={ui.topBarState} />}
+      topBar={<TopBar {...ui.topBarState} />}
     >
       <div className="p-dashboard__content">Hola</div>
     </Main>

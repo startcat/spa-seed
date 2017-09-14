@@ -25,6 +25,7 @@ export default new class {
 
   constructor() {
     this.loadSideBar();
+    this.loadTopBar();
   }
 
   // Actions
@@ -40,13 +41,14 @@ export default new class {
   }
 
   loadSideBar() {
-    this.sideBarItems = null;
-    setTimeout(() => {
-      this.sideBarItems = [
-        { name: "Menu 1", path: "/menu1", icon: "looks_one" },
-        { name: "Menu 2", path: "/menu2", icon: "looks_two" },
-        { name: "Menu 3", path: "/menu3", icon: "looks_3" }
-      ];
-    }, 1000);
+    this.sideBarItems = [
+      { name: "Menu 1", path: "/menu1", icon: "looks_one" },
+      { name: "Menu 2", path: "/menu2", icon: "looks_two" },
+      { name: "Menu 3", path: "/menu3", icon: "looks_3" }
+    ];
+  }
+
+  loadTopBar() {
+    this.topBarState = { notifications: 99 };
   }
 }();
