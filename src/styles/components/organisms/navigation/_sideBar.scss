@@ -2,4 +2,24 @@
   width: 100%;
   height: 100%;
   background-color: $color--grey;
+
+  &__item {
+    padding: 0.5rem;
+    padding-left: 1rem;
+    cursor: pointer;
+    &:hover {
+      color: $color--main;
+    }
+  }
+
+  &__icon {
+    display: inline;
+    vertical-align: middle;
+  }
+
+  &__name {
+    vertical-align: middle;
+    text-decoration: underline;
+    padding-left: 0.5rem;
+  }
 }

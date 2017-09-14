@@ -31,9 +31,9 @@ export default new class {
     this.sideBarItems = null;
     setTimeout(() => {
       this.sideBarItems = [
-        { name: "Menu 1", path: "/menu1" },
-        { name: "Menu 2", path: "/menu2" },
-        { name: "Menu 3", path: "/menu3" }
+        { name: "Menu 1", path: "/menu1", icon: "looks_one" },
+        { name: "Menu 2", path: "/menu2", icon: "looks_two" },
+        { name: "Menu 3", path: "/menu3", icon: "looks_3" }
       ];
     }, 1000);
   }

@@ -1,6 +1,7 @@
 /* @flow */
 
 import type { SideBarItem } from "domain/types/ui";
+import Icon from "components/atoms/icon";
 
 type Props = {
   items: ?Array<SideBarItem>
@@ -15,7 +16,10 @@ export default (props: Props) => {
             let menuEntryClassName = "o-sideBar__item";
             return (
               <div className={menuEntryClassName}>
-                {item.name}
+                <Icon className="o-sideBar__icon" name={item.icon} />
+                <span className="o-sideBar__name">
+                  {item.name}
+                </span>
               </div>
             );
           })

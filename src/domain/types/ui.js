@@ -1,6 +1,7 @@
 /* @flow */
 
 export type SideBarItem = {
+  icon: string,
   name: string,
   path: string
 };
