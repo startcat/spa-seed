@@ -9,7 +9,7 @@
   &__bullet {
     position: absolute;
     border-radius: 50%;
-    background-color: $color--notification;
+    background-color: $color--main;
     color: $color--white;
     text-align: center;
     font-size: 0.6rem;
@@ -18,5 +18,12 @@
     height: 1.2rem;
     top: -0.3rem;
     right: -0.3rem;
+  }
+
+  &__clickable {
+    cursor: pointer;
+    &:hover {
+      color: $color--main;
+    }
   }
 }

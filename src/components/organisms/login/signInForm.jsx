@@ -14,7 +14,7 @@ type FormFields = { user: ?string, password: ?string };
 
 // Class Component
 
-export default class SignInForm extends React.Component<void, Props, State> {
+export default class extends React.Component<void, Props, State> {
   // Private properties
 
   props: Props;
