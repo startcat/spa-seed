@@ -20,7 +20,7 @@ export default class Input extends React.Component<void, Props, State> {
     let className = "a-input";
     let classNameControl = "a-input__control";
 
-    if (this.props.modifiers) {
+    if (this.props.modifiers && this.props.modifiers.length > 0) {
       this.props.modifiers.forEach(modifier => {
         className += " a-input--" + modifier;
         classNameControl += " a-input__control--" + modifier;
@@ -36,6 +36,7 @@ export default class Input extends React.Component<void, Props, State> {
           className={classNameControl}
           autoFocus={!!this.props.autoFocus}
           type={this.props.type || "text"}
+          placeholder={this.props.placeholder || null}
           onChange={this.onChangeHandler.bind(this)}
         />
       </div>

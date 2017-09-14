@@ -76,8 +76,9 @@ export default class ResetForm extends React.Component<void, Props, State> {
             <Input
               type="password"
               autoFocus={true}
-              modifiers={["center"]}
+              modifiers={[]}
               onChange={this.onChangeHandler}
+              placeholder={t("login.password")}
               ref={input => {
                 this.password1Input = input;
               }}
@@ -86,8 +87,9 @@ export default class ResetForm extends React.Component<void, Props, State> {
           <div className="o-resetForm__input o-resetForm__input--password2">
             <Input
               type="password"
-              modifiers={["center"]}
+              modifiers={[]}
               onChange={this.onChangeHandler}
+              placeholder={t("login.password2")}
               ref={input => {
                 this.password2Input = input;
               }}

@@ -70,8 +70,9 @@ export default class ForgotForm extends React.Component<void, Props, State> {
             <Input
               type="text"
               autoFocus={true}
-              modifiers={["center"]}
+              modifiers={[]}
               onChange={this.onChangeHandler}
+              placeholder={t("login.email")}
               ref={input => {
                 this.emailInput = input;
               }}

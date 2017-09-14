@@ -71,8 +71,9 @@ export default class SignInForm extends React.Component<void, Props, State> {
             <Input
               type="text"
               autoFocus={true}
-              modifiers={["center"]}
+              modifiers={[]}
               onChange={this.onChangeHandler}
+              placeholder={t("login.email")}
               ref={input => {
                 this.userInput = input;
               }}
@@ -81,8 +82,9 @@ export default class SignInForm extends React.Component<void, Props, State> {
           <div className="o-signInForm__input o-signInForm__input--password">
             <Input
               type="password"
-              modifiers={["center"]}
+              modifiers={[]}
               onChange={this.onChangeHandler}
+              placeholder={t("login.password")}
               ref={input => {
                 this.passwordInput = input;
               }}

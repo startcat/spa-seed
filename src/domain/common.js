@@ -11,6 +11,7 @@ export default new class {
 
   // Actions
 
+  // Indica si la aplicación se encuentra en un proceso de loading "bloqueante"
   setLoading(value: boolean) {
     this.isLoading = value;
   }
