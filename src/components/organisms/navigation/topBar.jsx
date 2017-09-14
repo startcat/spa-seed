@@ -1,6 +1,7 @@
 /* @flow */
 
 import type { TopBarState } from "domain/types/ui";
+import { Link } from "react-router-dom";
 
 type Props = {
   state: ?TopBarState
@@ -11,7 +12,9 @@ export default (props: Props) => {
   return (
     <div className={className}>
       <div className="o-topBar__logoContainer">
-        <div className="o-topBar__logo" />
+        <Link to="/">
+          <div className="o-topBar__logo" />
+        </Link>
       </div>
     </div>
   );

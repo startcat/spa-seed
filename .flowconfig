@@ -10,3 +10,4 @@
 [options]
 esproposal.decorators=ignore
 module.system.node.resolve_dirname=src
+unsafe.enable_getters_and_setters=true

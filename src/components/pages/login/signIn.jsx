@@ -8,7 +8,7 @@ import SignInForm from "components/organisms/login/signInForm";
 export default observer(() => {
   return (
     <Login className="p-login">
-      <SignInForm isLoading={ui.isLoading} />
+      <SignInForm isLoading={ui.loading} />
     </Login>
   );
 });

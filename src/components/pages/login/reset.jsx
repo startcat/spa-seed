@@ -8,7 +8,7 @@ import ResetForm from "components/organisms/login/resetForm";
 export default observer(() => {
   return (
     <Login className="p-reset">
-      <ResetForm isLoading={ui.isLoading} />
+      <ResetForm isLoading={ui.loading} />
     </Login>
   );
 });

@@ -1,6 +1,6 @@
 /* @flow */
 
-import { observable } from "mobx";
+import { observable, computed } from "mobx";
 import type { SideBarItem, TopBarState } from "domain/types/ui";
 
 // Singleton
@@ -8,11 +8,18 @@ import type { SideBarItem, TopBarState } from "domain/types/ui";
 export default new class {
   // Properties
 
+  @observable isLangLoading: boolean = true;
+
   @observable isLoading: boolean = true;
 
   @observable sideBarItems: ?Array<SideBarItem> = null;
 
   @observable topBarState: ?TopBarState = null;
+
+  @computed
+  get loading(): boolean {
+    return this.isLangLoading || this.isLoading;
+  }
 
   // Initialization
 
@@ -25,6 +32,11 @@ export default new class {
   // Indica si la aplicación se encuentra en un proceso de loading "bloqueante"
   setLoading(value: boolean) {
     this.isLoading = value;
+  }
+
+  // Indica si la aplicación ya ha cargado los recursos i18n
+  setLangLoading(value: boolean) {
+    this.isLangLoading = value;
   }
 
   loadSideBar() {

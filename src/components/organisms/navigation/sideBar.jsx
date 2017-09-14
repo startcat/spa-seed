@@ -16,7 +16,7 @@ export default (props: Props) => {
         ? props.items.map(item => {
             let menuEntryClassName = "o-sideBar__item";
             return (
-              <div className={menuEntryClassName}>
+              <div key={item.name} className={menuEntryClassName}>
                 <Link to={item.path}>
                   <Icon className="o-sideBar__icon" name={item.icon} />
                   <span className="o-sideBar__name">
