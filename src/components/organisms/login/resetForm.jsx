@@ -1,7 +1,6 @@
 /* @flow */
 
 import { default as React } from "react";
-import { Link } from "react-router-dom";
 import Input from "components/atoms/form/input";
 import Button from "components/atoms/form/button";
 import Loader from "components/atoms/loader";
@@ -9,29 +8,36 @@ import validate from "utils/validate";
 
 // Types
 
-type Props = {};
+type Props = { isLoading: boolean };
 type State = { isValid: boolean };
-type FormFields = { email: ?string };
+type FormFields = { password1: ?string, password2: ?string };
 
 // Class Component
 
-export default class ForgotForm extends React.Component<void, Props, State> {
+export default class ResetForm extends React.Component<void, Props, State> {
   // Private properties
 
   props: Props;
   state: State = { isValid: false };
-  emailInput: ?Input = null;
+  password1Input: ?Input = null;
+  password2Input: ?Input = null;
 
   // Private Methods
 
   getJSON = (): FormFields => {
     return {
-      email: this.emailInput && this.emailInput.get()
+      password1: this.password1Input && this.password1Input.get(),
+      password2: this.password2Input && this.password2Input.get()
     };
   };
 
   validate = (json: FormFields) => {
-    this.setState({ isValid: validate.email(json.email) });
+    this.setState({
+      isValid:
+        validate.password(json.password1) &&
+        validate.password(json.password2) &&
+        json.password1 === json.password2
+    });
   };
 
   // Event Handlers
@@ -61,28 +67,33 @@ export default class ForgotForm extends React.Component<void, Props, State> {
   // Render
 
   render() {
-    let className = "o-forgotForm";
+    let className = "o-resetForm";
 
     return this.props.isLoading
       ? <Loader />
       : <div className={className}>
-          <div className="o-forgotForm__input o-forgotForm__input--email">
+          <div className="o-resetForm__input o-resetForm__input--password1">
             <Input
-              type="text"
+              type="password"
               autoFocus={true}
               modifiers={["center"]}
               onChange={this.onChangeHandler}
               ref={input => {
-                this.emailInput = input;
+                this.password1Input = input;
               }}
             />
           </div>
-          <div className="o-forgotForm__link">
-            <Link to="/">
-              {t("login.justRemember")}
-            </Link>
+          <div className="o-resetForm__input o-resetForm__input--password2">
+            <Input
+              type="password"
+              modifiers={["center"]}
+              onChange={this.onChangeHandler}
+              ref={input => {
+                this.password2Input = input;
+              }}
+            />
           </div>
-          <div className="o-forgotForm__button">
+          <div className="o-resetForm__button">
             <Button disabled={!this.state.isValid}>
               {t("login.reset")}
             </Button>

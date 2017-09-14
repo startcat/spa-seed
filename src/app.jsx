@@ -7,6 +7,7 @@ import i18next from "i18next";
 import session from "domain/session";
 import SignIn from "components/pages/login/signIn";
 import Forgot from "components/pages/login/forgot";
+import Reset from "components/pages/login/reset";
 import es from "i18n/es.js";
 
 i18next.init(
@@ -39,6 +40,7 @@ i18next.init(
           <Switch>
             <Route exact path="/" component={SignIn} />
             <Route exact path="/login/forgot" component={Forgot} />
+            <Route exact path="/login/reset" component={Reset} />
           </Switch>
         </BrowserRouter>,
         document.getElementById("app")

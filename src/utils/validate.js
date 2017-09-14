@@ -1,6 +1,6 @@
 /* @flow */
 
-class Util {
+export default new class {
   email(value: ?string) {
     if (!value) {
       return false;
@@ -9,10 +9,13 @@ class Util {
       return emailRegex.test(value);
     }
   }
-}
 
-// Export Singleton
-
-const singleton = new Util();
-
-export default singleton;
+  password(value: ?string) {
+    if (!value) {
+      return false;
+    } else {
+      const passwordRegex = /^(?=.*?[a-z])(?=.*?[A-Z0-9#?!@$%^&*-,;:¿]).{6,}$/;
+      return passwordRegex.test(value);
+    }
+  }
+}();

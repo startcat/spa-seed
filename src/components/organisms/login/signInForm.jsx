@@ -12,7 +12,7 @@ type Props = { isLoading: boolean };
 type State = { isValid: boolean };
 type FormFields = { user: ?string, password: ?string };
 
-// Class
+// Class Component
 
 export default class SignInForm extends React.Component<void, Props, State> {
   // Private properties
@@ -88,7 +88,7 @@ export default class SignInForm extends React.Component<void, Props, State> {
               }}
             />
           </div>
-          <div className="o-signInForm__forgotMessage">
+          <div className="o-signInForm__link">
             <Link to={"/login/forgot"}>
               {t("login.forgot")}
             </Link>
