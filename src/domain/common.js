@@ -2,9 +2,9 @@
 
 import { observable } from "mobx";
 
-// Store
+// Singleton
 
-class Domain {
+export default new class {
   // Properties
 
   @observable isLoading: boolean = true;
@@ -14,10 +14,4 @@ class Domain {
   setLoading(value: boolean) {
     this.isLoading = value;
   }
-}
-
-// Export Singleton
-
-const singleton = new Domain();
-
-export default singleton;
+}();
