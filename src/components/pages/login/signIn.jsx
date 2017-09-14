@@ -1,14 +1,14 @@
 /* @flow */
 
 import { observer } from "mobx-react";
-import common from "domain/common";
-import Login from "components/templates/login.jsx";
-import SignInForm from "components/organisms/login/signInForm.jsx";
+import ui from "domain/ui";
+import Login from "components/templates/login";
+import SignInForm from "components/organisms/login/signInForm";
 
 export default observer(() => {
   return (
     <Login className="p-login">
-      <SignInForm isLoading={common.isLoading} />
+      <SignInForm isLoading={ui.isLoading} />
     </Login>
   );
 });

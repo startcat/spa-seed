@@ -1,6 +1,5 @@
 TODO:
 
-* Empaquetar?
 * Settings para build (react, rollup...?)
 * Documentación
 * Ordenar imports
@@ -53,14 +52,13 @@ Antes de trabajar con este seed de proyecto, deberías conocer lo siguiente...
 # Naming / Convenviones
 
 * Todos los componentes devuelven un único <div> que tiene como className "[p/t/o/m/a]-[componentName]"
-* Todos los nombres de los archivos, así como de los classNames se forman usando camelCase y comienzan    con minus.
+* Todos los nombres de los archivos, así como de los classNames se forman usando camelCase
 * Los guiones y subguiones los usamos únicamente para generar la nomenclatura BEM
 * Las páginas son las únicas que hacen de "observers" del estado
-* Los componentes se pueden organizar en subcarpetas: Por ejemplo todas las páginas relativas al login      como signIn, reset, forgot... podemos meterlos en /pages/login/
-* Todos los componentes son funcionales, excepto cuando necesitemos state o refs
-* Siempre usamos await/async
+* Los componentes se pueden organizar en subcarpetas
+* Todos los componentes son funcionales, a menos que necesitemos state, refs, events...
 * Todos los cambios en el stado se hacen desde "actions"
-* Sobre el Store solo hacemos lecturas del estado
+* Sobre el Domain solo hacemos lecturas directamente, los updates se hacen vía actions
 * Todo el asincronismo lo tratamos con async/await
 
 # FAQ
