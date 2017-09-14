@@ -1,0 +1,38 @@
+.t-main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  &__topBar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $height--topBar;
+    background-color: yellow;
+  }
+
+  &__sideBar {
+    top: 0;
+    left: 0;
+    position: absolute;
+    padding-top: $height--topBar;
+    width: $width--sideBar;
+    height: 100%;
+    background-color: red;
+    box-sizing: border-box;
+  }
+
+  &__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding-left: $width--sideBar + 1rem;
+    padding-top: $height--topBar + 1rem;
+  }
+}
