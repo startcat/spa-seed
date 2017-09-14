@@ -3,12 +3,16 @@
 import { default as React } from "react";
 import type { TopBarState } from "domain/types/ui";
 import Icon from "components/atoms/icon";
+import Overlay from "components/molecules/overlay";
 import { Link } from "react-router-dom";
 
 // Types
 
 type Props = ?TopBarState;
-type State = {};
+type State = {
+  isNotificationsOverlayOpen: boolean,
+  isNotificationsOverlayLoading: boolean
+};
 
 // Class Component
 
@@ -16,12 +20,18 @@ export default class extends React.Component<void, Props, State> {
   // Private properties
 
   props: Props;
-  state: State;
+  state: State = {
+    isNotificationsOverlayOpen: false,
+    isNotificationsOverlayLoading: false
+  };
 
   // Event Handlers
 
   onNotificationsButtonClick = () => {
-    window.alert("ey");
+    this.setState({
+      isNotificationsOverlayOpen: true,
+      isNotificationsOverlayLoading: true
+    });
   };
 
   // Render
