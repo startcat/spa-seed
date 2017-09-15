@@ -9,3 +9,5 @@ export type SideBarItem = {
 export type TopBarState = {
   notifications: number
 };
+
+export type OverlayState = "Hidden" | "Loading" | "Visible";

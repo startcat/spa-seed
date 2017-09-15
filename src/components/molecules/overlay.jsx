@@ -1,23 +1,28 @@
 /* @flow */
 
 import Loader from "components/atoms/loader";
+import type { OverlayState } from "domain/types/ui";
 
 type Props = {
-  isLoading: boolean,
+  state: OverlayState,
   children: any
 };
 
 export default (props: Props) => {
-  let className = "m-overlay";
+  const className = "m-overlay m-overlay__" + props.state.toLowerCase();
+  const switchObject: { [state: OverlayState]: any } = {
+    Hidden: "",
+    Loading: (
+      <div className="m-overlay__loader">
+        <Loader />
+      </div>
+    ),
+    Visible: props.children
+  };
+
   return (
     <div className={className}>
-      {props.isLoading
-        ? <div className="m-overlay__loader">
-            <Loader />
-          </div>
-        : <div className="m-overlay__content">
-            {props.children}
-          </div>}
+      {switchObject[props.state]}
     </div>
   );
 };
