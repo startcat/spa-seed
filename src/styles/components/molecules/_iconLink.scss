@@ -1,13 +1,8 @@
 .m-iconLink {
-  &__item {
-    padding: 0.5rem;
-    padding-left: 1rem;
-    cursor: pointer;
-    &:hover {
-      color: $color--main;
-    }
+  cursor: pointer;
+  &:hover {
+    color: $color--main;
   }
-
   &__name {
     vertical-align: middle;
     text-decoration: underline;
