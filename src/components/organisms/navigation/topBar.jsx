@@ -1,7 +1,8 @@
 /* @flow */
 
 import { default as React } from "react";
-import type { TopBarState } from "domain/types/ui";
+import type { TopBarState, OverlayState } from "domain/types/ui";
+import IconsBar from "components/molecules/iconsBar";
 import Icon from "components/atoms/icon";
 import Overlay from "components/molecules/overlay";
 import { Link } from "react-router-dom";
@@ -10,8 +11,7 @@ import { Link } from "react-router-dom";
 
 type Props = ?TopBarState;
 type State = {
-  isNotificationsOverlayOpen: boolean,
-  isNotificationsOverlayLoading: boolean
+  notificationsOverlayState: OverlayState
 };
 
 // Class Component
@@ -21,16 +21,14 @@ export default class extends React.Component<void, Props, State> {
 
   props: Props;
   state: State = {
-    isNotificationsOverlayOpen: false,
-    isNotificationsOverlayLoading: false
+    notificationsOverlayState: "Hidden"
   };
 
   // Event Handlers
 
   onNotificationsButtonClick = () => {
     this.setState({
-      isNotificationsOverlayOpen: true,
-      isNotificationsOverlayLoading: true
+      notificationsOverlayState: "Loading"
     });
   };
 
@@ -46,17 +44,18 @@ export default class extends React.Component<void, Props, State> {
           </Link>
         </div>
         <div className="o-topBar__icons">
-          <div className="o-topBar__icon">
+          <IconsBar>
             <Icon
               name="notifications_none"
               onClick={this.onNotificationsButtonClick.bind(this)}
               bullet={this.props ? this.props.notifications : null}
             />
-          </div>
-          <div className="o-topBar__icon">
             <Icon name="face" />
-          </div>
+          </IconsBar>
         </div>
+        <Overlay state={this.state.notificationsOverlayState}>
+          <div>demo</div>
+        </Overlay>
       </div>
     );
   }

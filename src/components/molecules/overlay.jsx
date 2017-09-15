@@ -9,7 +9,7 @@ type Props = {
 };
 
 export default (props: Props) => {
-  const className = "m-overlay m-overlay__" + props.state.toLowerCase();
+  const className = "m-overlay m-overlay--" + props.state.toLowerCase();
   const switchObject: { [state: OverlayState]: any } = {
     Hidden: "",
     Loading: (
@@ -22,7 +22,9 @@ export default (props: Props) => {
 
   return (
     <div className={className}>
-      {switchObject[props.state]}
+      <div className="m-overlay__content">
+        {switchObject[props.state]}
+      </div>
     </div>
   );
 };
