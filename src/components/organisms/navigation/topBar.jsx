@@ -2,6 +2,7 @@
 
 import { default as React } from "react";
 import type { TopBarState, OverlayState } from "domain/types/ui";
+import OverlayTopBar from "components/molecules/overlayTopBar";
 import IconsBar from "components/molecules/iconsBar";
 import Icon from "components/atoms/icon";
 import Overlay from "components/molecules/overlay";
@@ -28,7 +29,13 @@ export default class extends React.Component<void, Props, State> {
 
   onNotificationsButtonClick = () => {
     this.setState({
-      notificationsOverlayState: "Loading"
+      notificationsOverlayState: "Visible"
+    });
+  };
+
+  onNotificationsCloseButtonClick = () => {
+    this.setState({
+      notificationsOverlayState: "Hidden"
     });
   };
 
@@ -54,6 +61,14 @@ export default class extends React.Component<void, Props, State> {
           </IconsBar>
         </div>
         <Overlay state={this.state.notificationsOverlayState}>
+          <OverlayTopBar>
+            <IconsBar>
+              <Icon
+                name="clear"
+                onClick={this.onNotificationsCloseButtonClick.bind(this)}
+              />
+            </IconsBar>
+          </OverlayTopBar>
           <div>demo</div>
         </Overlay>
       </div>
