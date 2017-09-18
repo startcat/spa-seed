@@ -1,8 +1,6 @@
 .m-formField {
   position: relative;
   &__label {
-    position: absolute;
-    bottom: 0.5rem;
     text-align: left;
     font-size: 0.9rem;
     color: $color--grey;

@@ -93,15 +93,17 @@ export default class extends React.Component<void, Props, State> {
               />
             </FormField>
           </div>
-          <div className="o-signInForm__link">
-            <Link to={"/login/forgot"}>
-              {t("login.forgot")}
-            </Link>
-          </div>
-          <div className="o-signInForm__button">
-            <Button disabled={!this.state.isValid}>
-              {t("login.enter")}
-            </Button>
+          <div className="o-signInForm__linksAndButtons">
+            <div className="o-signInForm__link">
+              <Link to={"/login/forgot"}>
+                {t("login.forgot")}
+              </Link>
+            </div>
+            <div className="o-signInForm__button">
+              <Button disabled={!this.state.isValid}>
+                {t("login.enter")}
+              </Button>
+            </div>
           </div>
         </div>;
   }
