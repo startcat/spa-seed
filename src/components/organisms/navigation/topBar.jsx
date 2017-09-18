@@ -6,6 +6,7 @@ import OverlayTopBar from "components/molecules/overlayTopBar";
 import IconsBar from "components/molecules/iconsBar";
 import Icon from "components/atoms/icon";
 import Overlay from "components/molecules/overlay";
+import Table from "components/organisms/table/table";
 import { Link } from "react-router-dom";
 import store from "store";
 
@@ -68,7 +69,28 @@ export default class extends React.Component<void, Props, State> {
               />
             </IconsBar>
           </OverlayTopBar>
-          <div>demo</div>
+          <div className="o-topBar__notifications">
+            <Table
+              keyProperty="id"
+              data={store.session.notifications}
+              columns={[
+                {
+                  id: "createdOn",
+                  caption: t("notifications.date"),
+                  template: value => {
+                    return value + "Hola";
+                  }
+                },
+                {
+                  id: "text",
+                  caption: t("notifications.text"),
+                  template: value => {
+                    return value + "Hola";
+                  }
+                }
+              ]}
+            />
+          </div>
         </Overlay>
       </div>
     );

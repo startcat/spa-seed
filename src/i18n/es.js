@@ -10,5 +10,9 @@ export default {
     forgot: "¿Has olvidado tu contraseña?",
     justRemember: "¡Ya me he acordado!",
     reset: "Resetear"
+  },
+  notifications: {
+    date: "Fecha",
+    text: "Notificación"
   }
 };

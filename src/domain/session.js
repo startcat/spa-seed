@@ -11,7 +11,7 @@ export default new class {
 
   @observable session: ?Session = null;
 
-  @observable notifications: ?Array<Notification> = null;
+  @observable notifications: Array<Notification> = [];
 
   // Initialization
 
@@ -31,7 +31,6 @@ export default new class {
   }
 
   async getNotifications() {
-    this.notifications = null;
     return new Promise(resolve => {
       setTimeout(() => {
         this.notifications = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(number => {
@@ -42,7 +41,7 @@ export default new class {
           };
         });
         resolve();
-      }, 2000);
+      }, 1000);
     });
   }
 }();

@@ -1,3 +1,18 @@
 .o-table {
+  display: table;
+  table-layout: fixed;
   width: 100%;
+
+  &__row {
+    display: table-row;
+    &--header {
+      background-color: $color--main;
+      color: $color--white;
+    }
+  }
+
+  &__cell {
+    display: table-cell;
+    width: auto;
+  }
 }
