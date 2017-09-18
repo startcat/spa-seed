@@ -1,11 +1,13 @@
 .a-input {
-  border: 1px solid $color--main;
-  border-radius: $borderRadius--base;
-  padding: 0.5rem;
+  border-bottom: 1px solid $color--main;
 
   &__control {
+    &::placeholder {
+      color: $color--grey;
+    }
+
     border: none;
-    color: $color--black;
+    color: $color--darkGrey;
     width: 100%;
     padding: 0.5rem;
     box-sizing: border-box;
@@ -16,6 +18,7 @@
 
     &:focus {
       outline: none;
+      color: $color--main;
     }
   }
 }
