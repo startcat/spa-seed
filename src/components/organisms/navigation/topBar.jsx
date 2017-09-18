@@ -7,6 +7,7 @@ import IconsBar from "components/molecules/iconsBar";
 import Icon from "components/atoms/icon";
 import Overlay from "components/molecules/overlay";
 import { Link } from "react-router-dom";
+import store from "store";
 
 // Types
 
@@ -27,10 +28,10 @@ export default class extends React.Component<void, Props, State> {
 
   // Event Handlers
 
-  onNotificationsButtonClick = () => {
-    this.setState({
-      notificationsOverlayState: "Visible"
-    });
+  onNotificationsButtonClick = async () => {
+    this.setState({ notificationsOverlayState: "Loading" });
+    await store.session.getNotifications();
+    this.setState({ notificationsOverlayState: "Visible" });
   };
 
   onNotificationsCloseButtonClick = () => {

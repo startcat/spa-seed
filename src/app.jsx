@@ -4,7 +4,7 @@ import { default as ReactDOM } from "react-dom";
 import { default as React } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import i18n from "i18n";
-import store from "store"; // eslint-disable-line no-unused-vars
+import store from "store";
 import SignIn from "components/pages/login/signIn";
 import Forgot from "components/pages/login/forgot";
 import Reset from "components/pages/login/reset";

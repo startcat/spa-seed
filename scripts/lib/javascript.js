@@ -15,8 +15,6 @@ const includePaths = require("rollup-plugin-includePaths");
 const commonjs = require("rollup-plugin-commonjs");
 const replace = require("rollup-plugin-replace");
 const chalk = require("chalk");
-const execFile = require("child_process").execFile;
-const flow = require("flow-bin");
 
 // Private
 
@@ -50,16 +48,6 @@ module.exports = (options, callback) => {
         }
 
         return cb(null);
-      },
-
-      // Flow
-
-      cb => {
-        execFile(flow, ["status"], (err, stdout) => {
-          console.log(stdout);
-          // No tratamos el err (aunque simulamos que si para "engañar" al linter)
-          return cb(err && null);
-        });
       },
 
       // Generamos Bundle (rollup && babel)

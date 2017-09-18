@@ -11,3 +11,9 @@ export type TopBarState = {
 };
 
 export type OverlayState = "Hidden" | "Loading" | "Visible";
+
+export type TableColumn = {
+  id: string,
+  caption: string,
+  template: (value: any) => {}
+};

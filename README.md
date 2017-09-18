@@ -6,6 +6,7 @@ TODO:
 * Ordenar propiedades de CSS
 * Rename de assets
 * Tests
+* Dashboard: https://strml.github.io/react-grid-layout/examples/0-showcase.html
 
 # Conocimientos Previos
 
