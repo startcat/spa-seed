@@ -35,9 +35,7 @@ export default class extends React.Component<void, Props, State> {
   };
 
   onNotificationsCloseButtonClick = () => {
-    this.setState({
-      notificationsOverlayState: "Hidden"
-    });
+    this.setState({ notificationsOverlayState: "Hidden" });
   };
 
   // Render
