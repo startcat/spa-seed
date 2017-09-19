@@ -14,7 +14,9 @@ export default {
     enter: "Entrar",
     forgot: "¿Has olvidado tu contraseña?",
     justRemember: "¡Ya me he acordado!",
-    reset: "Resetear"
+    reset: "Resetear",
+    forgotText:
+      "Escribe tu email y te mandaremos un enlace para recuperar tu contraseña"
   },
   notifications: {
     date: "Fecha",

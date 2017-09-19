@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Input from "components/atoms/form/input";
 import Button from "components/atoms/form/button";
 import Loader from "components/atoms/loader";
+import FormField from "components/molecules/formField";
 import validate from "utils/validate";
 import { t } from "i18n";
 
@@ -67,17 +68,21 @@ export default class ForgotForm extends React.Component<void, Props, State> {
     return this.props.isLoading
       ? <Loader />
       : <div className={className}>
+          <div className="o-forgotForm__text">
+            {t("login.forgotText")}
+          </div>
           <div className="o-forgotForm__input o-forgotForm__input--email">
-            <Input
-              type="text"
-              autoFocus={true}
-              modifiers={[]}
-              onChange={this.onChangeHandler}
-              placeholder={t("login.email")}
-              ref={input => {
-                this.emailInput = input;
-              }}
-            />
+            <FormField label={t("login.email")}>
+              <Input
+                type="text"
+                autoFocus={true}
+                modifiers={[]}
+                onChange={this.onChangeHandler}
+                ref={input => {
+                  this.emailInput = input;
+                }}
+              />
+            </FormField>
           </div>
           <div className="o-forgotForm__link">
             <Link to="/">

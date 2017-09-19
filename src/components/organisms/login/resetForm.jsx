@@ -4,6 +4,7 @@ import { default as React } from "react";
 import Input from "components/atoms/form/input";
 import Button from "components/atoms/form/button";
 import Loader from "components/atoms/loader";
+import FormField from "components/molecules/formField";
 import validate from "utils/validate";
 import { t } from "i18n";
 
@@ -74,27 +75,29 @@ export default class ResetForm extends React.Component<void, Props, State> {
       ? <Loader />
       : <div className={className}>
           <div className="o-resetForm__input o-resetForm__input--password1">
-            <Input
-              type="password"
-              autoFocus={true}
-              modifiers={[]}
-              onChange={this.onChangeHandler}
-              placeholder={t("login.password")}
-              ref={input => {
-                this.password1Input = input;
-              }}
-            />
+            <FormField label={t("login.password")}>
+              <Input
+                type="password"
+                autoFocus={true}
+                modifiers={[]}
+                onChange={this.onChangeHandler}
+                ref={input => {
+                  this.password1Input = input;
+                }}
+              />
+            </FormField>
           </div>
           <div className="o-resetForm__input o-resetForm__input--password2">
-            <Input
-              type="password"
-              modifiers={[]}
-              onChange={this.onChangeHandler}
-              placeholder={t("login.password2")}
-              ref={input => {
-                this.password2Input = input;
-              }}
-            />
+            <FormField label={t("login.password2")}>
+              <Input
+                type="password"
+                modifiers={[]}
+                onChange={this.onChangeHandler}
+                ref={input => {
+                  this.password2Input = input;
+                }}
+              />
+            </FormField>
           </div>
           <div className="o-resetForm__button">
             <Button disabled={!this.state.isValid}>
