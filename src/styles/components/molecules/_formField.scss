@@ -1,6 +1,5 @@
 .m-formField {
   position: relative;
-  padding-top: 2rem;
 
   &__label {
     transition: top 0.10s ease-in-out;
@@ -20,7 +19,7 @@
   [class*="--hasFocus"],
   :not([class*="--isEmpty"]) {
     & + .m-formField__label {
-      top: -1rem;
+      top: -1.2rem;
     }
   }
 }
