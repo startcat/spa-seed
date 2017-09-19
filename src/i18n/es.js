@@ -16,7 +16,8 @@ export default {
     justRemember: "¡Ya me he acordado!",
     reset: "Resetear",
     forgotText:
-      "Escribe tu email y te mandaremos un enlace para recuperar tu contraseña"
+      "Escribe tu email y te mandaremos un enlace para recuperar tu contraseña",
+    resetText: "Introduce tu nueva contraseña"
   },
   notifications: {
     date: "Fecha",

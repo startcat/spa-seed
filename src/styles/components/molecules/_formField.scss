@@ -1,11 +1,26 @@
 .m-formField {
   position: relative;
+  padding-top: 2rem;
+
   &__label {
+    transition: top 0.10s ease-in-out;
     text-align: left;
     font-size: 0.9rem;
     color: $color--grey;
+    position: absolute;
+    top: 0;
+    z-index: -1;
   }
+
   &__input {
     position: relative;
+    z-index: 1;
+  }
+
+  [class*="--hasFocus"],
+  :not([class*="--isEmpty"]) {
+    & + .m-formField__label {
+      top: -1rem;
+    }
   }
 }

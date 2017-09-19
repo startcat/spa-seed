@@ -74,6 +74,9 @@ export default class ResetForm extends React.Component<void, Props, State> {
     return this.props.isLoading
       ? <Loader />
       : <div className={className}>
+          <div className="o-resetForm__text">
+            {t("login.resetText")}
+          </div>
           <div className="o-resetForm__input o-resetForm__input--password1">
             <FormField label={t("login.password")}>
               <Input
