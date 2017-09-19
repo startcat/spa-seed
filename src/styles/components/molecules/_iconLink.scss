@@ -3,9 +3,13 @@
   &:hover {
     color: $color--main;
   }
+  &__icon {
+    display: block;
+    text-align: center;
+    font-size: 2rem;
+  }
   &__name {
     vertical-align: middle;
-    text-decoration: underline;
-    padding-left: 0.5rem;
+    text-align: center;
   }
 }

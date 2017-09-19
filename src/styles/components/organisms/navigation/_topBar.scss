@@ -24,6 +24,8 @@
     @include vcentered();
     float: right;
     padding-right: 1rem;
+    font-size: 2rem;
+    color: $color--grey;
   }
 
   &__notifications {

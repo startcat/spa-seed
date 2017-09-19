@@ -16,10 +16,13 @@
     z-index: 1;
   }
 
+  /* stylelint-disable */
+
   [class*="--hasFocus"],
   :not([class*="--isEmpty"]) {
     & + .m-formField__label {
       top: -1.2rem;
     }
   }
+  /* stylelint-enable */
 }

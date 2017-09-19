@@ -15,9 +15,9 @@ export default (props: Props) => {
     <div className={className}>
       <Link to={props.path}>
         <Icon className="m-iconLink__icon" name={props.icon} />
-        <span className="m-iconLink__name">
+        <div className="m-iconLink__name">
           {props.text}
-        </span>
+        </div>
       </Link>
     </div>
   );
