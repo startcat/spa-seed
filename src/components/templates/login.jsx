@@ -26,9 +26,10 @@ export default (props: Props) => {
           <div className="t-login__particles">
             <Particles hexColor="#ff9d8c" />
           </div>
-          <div className="t-login__welcome">
-            {t("login.welcome")}
-          </div>
+          <div
+            className="t-login__welcome"
+            dangerouslySetInnerHTML={{ __html: t("login.welcome") }}
+          />
         </div>
       </div>
     </div>
