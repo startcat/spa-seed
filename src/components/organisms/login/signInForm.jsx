@@ -6,6 +6,7 @@ import FormField from "components/molecules/formField";
 import Input from "components/atoms/form/input";
 import Button from "components/atoms/form/button";
 import Loader from "components/atoms/loader";
+import { t } from "i18n";
 
 // Types
 

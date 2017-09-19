@@ -1,9 +1,13 @@
 export default {
   app: {
-    name: "Start.cat :: SPA Seed"
+    name: "START.CAT"
+  },
+  footer: {
+    terms: "Términos y condiciones de uso",
+    privacy: "Política de privacidad"
   },
   login: {
-    welcome: "Bienvenido a <b>START.CAT</b>",
+    welcome: "Bienvenido a <b>{{name}}</b>",
     email: "Email",
     password: "Contraseña",
     password2: "Repite tu contraseña",

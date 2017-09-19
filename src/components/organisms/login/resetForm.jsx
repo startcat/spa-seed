@@ -5,6 +5,7 @@ import Input from "components/atoms/form/input";
 import Button from "components/atoms/form/button";
 import Loader from "components/atoms/loader";
 import validate from "utils/validate";
+import { t } from "i18n";
 
 // Types
 

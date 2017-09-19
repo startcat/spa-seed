@@ -3,17 +3,16 @@
 import { default as ReactDOM } from "react-dom";
 import { default as React } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import i18n from "i18n";
+import { init } from "i18n";
 import store from "store";
 import SignIn from "components/pages/login/signIn";
 import Forgot from "components/pages/login/forgot";
 import Reset from "components/pages/login/reset";
 import Dashboard from "components/pages/dashboard";
 
-// i18n Initialization
+// Translations Initialization
 
-i18n.init(t => {
-  window.t = t;
+init(() => {
   store.ui.setLangLoading(false);
 });
 

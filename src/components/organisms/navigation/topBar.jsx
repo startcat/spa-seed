@@ -9,6 +9,7 @@ import Overlay from "components/molecules/overlay";
 import Table from "components/organisms/table/table";
 import { Link } from "react-router-dom";
 import store from "store";
+import { t } from "i18n";
 
 // Types
 

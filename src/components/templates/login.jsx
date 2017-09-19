@@ -1,6 +1,8 @@
 /* @flow */
 
 import Particles from "components/atoms/particles";
+import Footer from "components/organisms/footer";
+import { t } from "i18n";
 
 type Props = {
   className: string,
@@ -20,6 +22,9 @@ export default (props: Props) => {
             {props.children}
           </div>
         </div>
+        <div className="t-login__footer">
+          <Footer />
+        </div>
       </div>
       <div className="t-login__half">
         <div className="t-login__background">
@@ -28,7 +33,9 @@ export default (props: Props) => {
           </div>
           <div
             className="t-login__welcome"
-            dangerouslySetInnerHTML={{ __html: t("login.welcome") }}
+            dangerouslySetInnerHTML={{
+              __html: t("login.welcome", { name: t("app.name") })
+            }}
           />
         </div>
       </div>
