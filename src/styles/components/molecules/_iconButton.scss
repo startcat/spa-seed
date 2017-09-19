@@ -1,0 +1,35 @@
+.m-iconButton {
+  cursor: pointer;
+  text-align: center;
+  box-sizing: border-box;
+  color: $color--grey;
+
+  &:hover {
+    color: $color--main;
+  }
+  &__iconContainer {
+    display: inline-block;
+    border-radius: 50%;
+    padding: 0.5rem;
+  }
+  &__icon {
+    font-size: 2rem;
+  }
+  &__name {
+    vertical-align: middle;
+    text-align: center;
+  }
+
+  &--active {
+    color: $color--main;
+    border-right: 2px solid $color--main;
+
+    .m-iconButton__iconContainer {
+      background-color: $color--main;
+    }
+
+    .m-iconButton__icon {
+      color: $color--white;
+    }
+  }
+}

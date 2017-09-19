@@ -26,7 +26,7 @@ $color--white: #fff;
 $color--error: red;
 $color--warning: orange;
 $color--lightGrey: #f0f0f0;
-$color--grey: #ccc;
+$color--grey: #a0a0a0;
 $color--darkGrey: #666;
 
 /**
@@ -55,5 +55,12 @@ $transition--opacity: opacity .15s ease-in-out;
 * Navigation
 */
 
-$width--sideBar: 12rem;
+$width--sideBar: 10rem;
 $height--topBar: 5rem;
+
+/** 
+* BoxShadow
+*/
+
+$boxShadow--bottom: 0 1px 5px rgba($color--black, .05);
+$boxShadow--right: 1px 1px 5px rgba($color--black, .05);
