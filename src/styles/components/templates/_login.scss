@@ -47,12 +47,24 @@
     overflow: hidden;
   }
 
-  &__gradient {
+  &__particles {
     height: 100%;
     width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 
   &__content {
     padding: 1rem 0;
+  }
+
+  &__welcome {
+    @include vcentered();
+    color: $color--white;
+    font-size: 7rem;
+    line-height: 7.5rem;
+    padding-left: 5rem;
+    max-width: 60rem;
   }
 }

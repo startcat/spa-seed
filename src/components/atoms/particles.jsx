@@ -6,7 +6,7 @@ import { default as React } from "react";
 
 // Types
 
-type Props = { id: string };
+type Props = { hexColor: string };
 type State = {};
 
 // Class Component
@@ -24,7 +24,7 @@ export default class extends React.Component<void, Props, State> {
       maxParticles: 150,
       sizeVariations: 3,
       speed: 1,
-      color: "#ff9d8c",
+      color: this.props.hexColor,
       minDistance: 120,
       connectParticles: true,
       responsive: null

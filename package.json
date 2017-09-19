@@ -46,7 +46,6 @@
     "flow-bin": "0.52.0",
     "flow-typed": "2.1.5",
     "fs-extra": "4.0.1",
-    "granim": "1.0.6",
     "node-sass": "4.5.3",
     "particlesjs": "2.0.2",
     "postcss": "6.0.8",

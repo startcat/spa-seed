@@ -23,8 +23,11 @@ export default (props: Props) => {
       </div>
       <div className="t-login__half">
         <div className="t-login__background">
-          <div className="t-login__gradient">
-            <Particles id="login" />
+          <div className="t-login__particles">
+            <Particles hexColor="#ff9d8c" />
+          </div>
+          <div className="t-login__welcome">
+            {t("login.welcome")}
           </div>
         </div>
       </div>
