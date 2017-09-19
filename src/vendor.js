@@ -1,5 +1,8 @@
 // External Vendor Files
 
+window.vendor = {};
+
 // #include "node_modules/particlesjs/dist/particles.min.js"
 
-// #include "node_modules/granim/dist/granim.min.js"
+window.vendor.particles = window.Particles;
+delete window.Particles;

@@ -1,11 +1,5 @@
 /* @flow */
 
-export default (id) => {
-
-    
-
-};
-
 /* eslint-disable */
 
 // Create Particle class

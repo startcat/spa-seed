@@ -1,6 +1,6 @@
 /* @flow */
 
-import Gradient from "components/atoms/gradient";
+import Particles from "components/atoms/particles";
 
 type Props = {
   className: string,
@@ -24,7 +24,7 @@ export default (props: Props) => {
       <div className="t-login__half">
         <div className="t-login__background">
           <div className="t-login__gradient">
-            <Gradient id="login" />
+            <Particles id="login" />
           </div>
         </div>
       </div>
