@@ -33,6 +33,10 @@ module.exports = {
   APP_JS_ENTRY: path.join(SRC_FOLDER, "app.jsx"),
   APP_JS_TARGET: path.join(BUILD_FOLDER, "/app.js"),
 
+  // Vendor
+  VENDOR_JS_ENTRY: path.join(SRC_FOLDER, "vendor.js"),
+  VENDOR_JS_TARGET: path.join(BUILD_FOLDER, "/vendor.js"),
+
   // DEV Server
   DEV_SERVER_PORT: 8080
 };

@@ -2,6 +2,7 @@
 
 import { default as React } from "react";
 import gradient from "utils/gradient";
+import Particles from "utils/particles";
 
 // Types
 
@@ -24,8 +25,18 @@ export default class extends React.Component<void, Props, State> {
       { start: [255, 207, 160], stop: [234, 92, 68] },
       { start: [212, 121, 121], stop: [130, 105, 151] }
     ]);
+    var options = {
+      particleColor: "#fff",
+      background: "#ff5232",
+      interactive: true,
+      speed: "fast",
+      density: "medium"
+    };
+    var network = new Particles(
+      document.getElementById(this.props.id),
+      options
+    );
   }
-
   // Event Handlers
 
   // Render

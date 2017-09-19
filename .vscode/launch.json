@@ -24,6 +24,16 @@
             "runtimeExecutable": "/Users/juancarlos/.nvm/versions/node/v8.1.1/bin/node",
             "stopOnEntry": false,
             "env": { }
+        },
+        {
+            "type": "node",
+            "protocol": "inspector",
+            "name": "Scripts - Vendor",
+            "program": "${workspaceRoot}/scripts/vendor.js",
+            "cwd": "${workspaceRoot}",
+            "runtimeExecutable": "/Users/juancarlos/.nvm/versions/node/v8.1.1/bin/node",
+            "stopOnEntry": false,
+            "env": { }
         }
     ]
 }
