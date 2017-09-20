@@ -6,13 +6,15 @@
   &__row {
     display: table-row;
     &--header {
-      background-color: $color--main;
+      background-color: $color--tableHeaders;
       color: $color--white;
+      font-weight: bold;
     }
   }
 
   &__cell {
     display: table-cell;
     width: auto;
+    padding: 0.5rem;
   }
 }

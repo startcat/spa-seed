@@ -5,5 +5,10 @@
   box-sizing: border-box;
   font-size: 1.5rem;
   color: $color--grey;
-  padding-bottom: 1rem;
+  padding: 1rem 0;
+
+  &__title {
+    float: left;
+    font-size: 1.5rem;
+  }
 }

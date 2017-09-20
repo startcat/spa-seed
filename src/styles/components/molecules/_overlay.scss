@@ -22,9 +22,10 @@
     background-color: $color--white;
     border-radius: $borderRadius--modals;
     position: absolute;
-    width: 90%;
-    height: 90%;
+    width: calc(100% - 5rem);
+    height: calc(100% - 5rem);
     padding: 1rem;
+    box-sizing: border-box;
   }
   &__loader {
     @include centered();

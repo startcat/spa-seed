@@ -25,6 +25,7 @@ export default {
     resetText: "Introduce tu nueva contraseña"
   },
   notifications: {
+    notifications: "Notificaciones",
     date: "Fecha",
     text: "Notificación"
   }

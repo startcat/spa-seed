@@ -62,7 +62,7 @@ export default class extends React.Component<void, Props, State> {
           </IconsBar>
         </div>
         <Overlay state={this.state.notificationsOverlayState}>
-          <OverlayTopBar>
+          <OverlayTopBar title={t("notifications.notifications")}>
             <IconsBar>
               <Icon
                 name="clear"
