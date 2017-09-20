@@ -16,7 +16,7 @@ export default (props: Props) => {
             return (
               <div key={item.path} className="o-sideBar__item">
                 <IconButton
-                  active={window.location.pathname === item.path}
+                  active={window.location.pathname.indexOf(item.path) === 0}
                   path={item.path}
                   icon={item.icon}
                   caption={item.caption}

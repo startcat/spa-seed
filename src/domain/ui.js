@@ -46,17 +46,17 @@ export default class {
       {
         caption: t("menu.dashboard"),
         path: "/dashboard",
-        icon: "dashboard"
+        icon: "equalizer"
       },
       {
         caption: t("menu.users"),
         path: "/menu2",
-        icon: "equalizer"
+        icon: "group"
       },
       {
         caption: t("menu.settings"),
         path: "/menu3",
-        icon: "play_circle_outline"
+        icon: "settings"
       }
     ];
   }
