@@ -46,7 +46,7 @@ export default class {
           };
         });
         resolve();
-      }, 1000000);
+      }, 1000);
     });
   }
 }
