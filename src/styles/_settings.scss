@@ -28,6 +28,9 @@ $color--warning: orange;
 $color--lightGrey: #f0f0f0;
 $color--grey: #a0a0a0;
 $color--darkGrey: #666;
+$color--gradient1: #fe6345;
+$color--gradient2: #fe4645;
+$color--progress: #6acd60;
 
 /**
  * Responsive Breakpoints (Mobile First)
@@ -43,7 +46,8 @@ $mq--desktop: '@media only screen  and (min-width : 1824px)';
  * Border Radius
  */
 
-$borderRadius--base: 20px;
+$borderRadius--modals: 3px;
+$borderRadius--buttons: 20px;
 
 /**
 * Transitions
@@ -64,3 +68,13 @@ $height--topBar: 5rem;
 
 $boxShadow--bottom: 0 1px 5px rgba($color--black, .05);
 $boxShadow--right: 1px 1px 5px rgba($color--black, .05);
+
+/**
+ * Gradient
+ */
+
+$gradient--base: linear-gradient(
+  to right,
+  $color--gradient1 0%,
+  $color--gradient2 100%
+);

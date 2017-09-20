@@ -1,3 +1,16 @@
 // Normalize
 
 @import '../../node_modules/normalize.css/normalize';
+
+// NProgress
+
+@import '../../node_modules/nprogress/nprogress';
+
+#nprogress {
+  .bar {
+    background-color: $color--progress;
+  }
+  .peg {
+    display: none;
+  }
+}

@@ -22,6 +22,7 @@ export default (props: Props) => {
 
   return (
     <div className={className}>
+      <div className="m-overlay__background" />
       <div className="m-overlay__content">
         {switchObject[props.state]}
       </div>

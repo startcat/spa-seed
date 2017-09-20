@@ -9,6 +9,7 @@ const chalk = require("chalk");
 const path = require("path");
 const fs = require("fs");
 const Preprocessor = require("preprocessor");
+const uglify = require("uglify-js");
 
 // Private
 
@@ -33,6 +34,15 @@ module.exports = (options, callback) => {
         } catch (e) {
           return cb(new Error(e.message));
         }
+      },
+
+      // Uglify
+
+      (js, cb) => {
+        console.log(chalk.dim("[Vendor] Uglifying..."));
+        const uglifyresult = uglify.minify(js);
+        console.log(chalk.dim("[Vendor] Uglified"));
+        return cb(uglifyresult.error, uglifyresult.code);
       },
 
       // Save to Target
