@@ -2,7 +2,7 @@
 
 export type SideBarItem = {
   icon: string,
-  name: string,
+  caption: string,
   path: string
 };
 

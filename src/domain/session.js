@@ -2,11 +2,11 @@
 
 import { observable } from "mobx";
 import type { Session, Notification } from "domain/types/session";
-import ui from "domain/ui";
+import store from "store";
 
 // Singleton
 
-export default new class {
+export default class {
   // Properties
 
   @observable session: ?Session = null;
@@ -24,9 +24,9 @@ export default new class {
   check() {
     // Función que verifica si estamos o no logados. En caso de que no lo estemos,
     // nos lleva a la pantalla de login.
-    ui.setLoading(true);
+    store.ui.setLoading(true);
     setTimeout(() => {
-      ui.setLoading(false);
+      store.ui.setLoading(false);
     }, 1000);
   }
 
@@ -44,4 +44,4 @@ export default new class {
       }, 1000);
     });
   }
-}();
+}

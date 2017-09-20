@@ -2,10 +2,11 @@
 
 import { observable, computed } from "mobx";
 import type { SideBarItem, TopBarState } from "domain/types/ui";
+import { t } from "i18n";
 
 // Singleton
 
-export default new class {
+export default class {
   // Properties
 
   @observable isLangLoading: boolean = true;
@@ -42,13 +43,25 @@ export default new class {
 
   loadSideBar() {
     this.sideBarItems = [
-      { name: "Menu 1", path: "/menu1", icon: "airplay" },
-      { name: "Menu 2", path: "/menu2", icon: "equalizer" },
-      { name: "Menu 3", path: "/menu3", icon: "play_circle_outline" }
+      {
+        caption: t("menu.dashboard"),
+        path: "/dashboard",
+        icon: "dashboard"
+      },
+      {
+        caption: t("menu.users"),
+        path: "/menu2",
+        icon: "equalizer"
+      },
+      {
+        caption: t("menu.settings"),
+        path: "/menu3",
+        icon: "play_circle_outline"
+      }
     ];
   }
 
   loadTopBar() {
     this.topBarState = { notifications: 99 };
   }
-}();
+}

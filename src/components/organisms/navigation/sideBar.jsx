@@ -14,12 +14,12 @@ export default (props: Props) => {
       {props.items
         ? props.items.map(item => {
             return (
-              <div key={item.name} className="o-sideBar__item">
+              <div key={item.path} className="o-sideBar__item">
                 <IconButton
-                  active={true}
+                  active={window.location.pathname === item.path}
                   path={item.path}
                   icon={item.icon}
-                  text={item.name}
+                  caption={item.caption}
                 />
               </div>
             );

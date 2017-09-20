@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 type Props = {
   icon: string,
-  text: string,
+  caption: string,
   path: string,
   active?: boolean
 };
@@ -21,8 +21,8 @@ export default (props: Props) => {
         <div className="m-iconButton__iconContainer">
           <Icon className="m-iconButton__icon" name={props.icon} />
         </div>
-        <div className="m-iconButton__name">
-          {props.text}
+        <div className="m-iconButton__caption">
+          {props.caption}
         </div>
       </Link>
     </div>

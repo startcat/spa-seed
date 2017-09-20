@@ -13,6 +13,7 @@ import Dashboard from "components/pages/dashboard";
 // Translations Initialization
 
 init(() => {
+  store.init();
   store.ui.setLangLoading(false);
 });
 

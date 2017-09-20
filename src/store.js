@@ -5,10 +5,12 @@ import Session from "domain/session";
 
 // Singleton
 
-const ui: typeof Ui = Ui;
-const session: typeof Session = Session;
+export default new class {
+  ui: Ui;
+  session: Session;
 
-export default {
-  ui: ui,
-  session: session
-};
+  init() {
+    this.ui = new Ui();
+    this.session = new Session();
+  }
+}();

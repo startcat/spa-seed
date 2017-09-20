@@ -2,6 +2,11 @@ export default {
   app: {
     name: "START.CAT"
   },
+  menu: {
+    dashboard: "Dashboard",
+    users: "Usuarios",
+    settings: "Configuración"
+  },
   footer: {
     terms: "Términos y condiciones de uso",
     privacy: "Política de privacidad"
