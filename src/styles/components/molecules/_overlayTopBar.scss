@@ -4,11 +4,35 @@
   text-align: right;
   box-sizing: border-box;
   font-size: 1.5rem;
+  line-height: 2rem;
   color: $color--grey;
   padding: 1rem 0;
 
-  &__title {
+  &__titleContainer {
     float: left;
+    line-height: 1.5rem;
+  }
+
+  &__bulletContainer {
+    display: inline-block;
+    margin-left: 0.5rem;
+    background-color: $color--main;
+    border-radius: 50%;
+    width: 1.5rem;
+    text-align: center;
+    position: relative;
+  }
+
+  &__title {
     font-size: 1.5rem;
+    line-height: 1.5rem;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &__bullet {
+    font-size: 0.8rem;
+    line-height: 1.5rem;
+    color: $color--white;
   }
 }

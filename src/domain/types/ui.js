@@ -11,6 +11,7 @@ export type TopBarState = {
 };
 
 export type OverlayState = "Hidden" | "Loading" | "Visible";
+export type OverlayType = "Large" | "Medium" | "Small";
 
 export type TableColumn = {
   id: string,

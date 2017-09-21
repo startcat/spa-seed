@@ -2,11 +2,11 @@
 
 import { default as React } from "react";
 import type { TopBarState, OverlayState } from "domain/types/ui";
+import Notifications from "components/organisms/notifications";
 import OverlayTopBar from "components/molecules/overlayTopBar";
 import IconsBar from "components/molecules/iconsBar";
 import Icon from "components/atoms/icon";
 import Overlay from "components/molecules/overlay";
-import Table from "components/organisms/table/table";
 import { Link } from "react-router-dom";
 import store from "store";
 import { t } from "i18n";
@@ -61,8 +61,8 @@ export default class extends React.Component<void, Props, State> {
             <Icon name="face" />
           </IconsBar>
         </div>
-        <Overlay state={this.state.notificationsOverlayState}>
-          <OverlayTopBar title={t("notifications.notifications")}>
+        <Overlay state={this.state.notificationsOverlayState} type="Medium">
+          <OverlayTopBar title={t("notifications.notifications")} bullet={2}>
             <IconsBar>
               <Icon
                 name="clear"
@@ -71,26 +71,7 @@ export default class extends React.Component<void, Props, State> {
             </IconsBar>
           </OverlayTopBar>
           <div className="o-topBar__notifications">
-            <Table
-              keyProperty="id"
-              data={store.session.notifications}
-              columns={[
-                {
-                  id: "createdOn",
-                  caption: t("notifications.date"),
-                  template: value => {
-                    return value + "Hola";
-                  }
-                },
-                {
-                  id: "text",
-                  caption: t("notifications.text"),
-                  template: value => {
-                    return value + "Hola";
-                  }
-                }
-              ]}
-            />
+            <Notifications data={store.session.notifications} />
           </div>
         </Overlay>
       </div>

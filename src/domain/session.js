@@ -42,7 +42,8 @@ export default class {
           return {
             id: number.toString(),
             createdOn: new Date(),
-            text: "Notification " + number
+            text: "Notification " + number,
+            isRead: false
           };
         });
         resolve();

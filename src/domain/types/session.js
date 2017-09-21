@@ -8,5 +8,6 @@ export type Session = {
 export type Notification = {
   id: string,
   createdOn: Date,
-  text: string
+  text: string,
+  isRead: boolean
 };

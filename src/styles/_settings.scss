@@ -49,6 +49,7 @@ $mq--desktop: '@media only screen  and (min-width : 1824px)';
 
 $borderRadius--modals: 3px;
 $borderRadius--buttons: 20px;
+$borderRadius--tableHeaders: 3px;
 
 /**
 * Transitions
@@ -79,3 +80,12 @@ $gradient--base: linear-gradient(
   $color--gradient1 0%,
   $color--gradient2 100%
 );
+
+/**
+ * Overlay
+ */
+
+$width--overlayMedium: 60rem;
+$height--overlayMedium: 60rem;
+$width--overlaySmall: 40rem;
+$height--overlaySmall: 20rem;

@@ -1,15 +1,18 @@
 /* @flow */
 
 import Loader from "components/atoms/loader";
-import type { OverlayState } from "domain/types/ui";
+import type { OverlayState, OverlayType } from "domain/types/ui";
 
 type Props = {
+  type?: OverlayType,
   state: OverlayState,
   children: any
 };
 
 export default (props: Props) => {
-  const className = "m-overlay m-overlay--" + props.state.toLowerCase();
+  let className = "m-overlay";
+  className += " m-overlay--" + props.state.toLowerCase();
+  className += " m-overlay--" + (props.type || "Large").toLowerCase();
   const switchObject: { [state: OverlayState]: any } = {
     Hidden: "",
     Loading: (
