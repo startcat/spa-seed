@@ -1,0 +1,32 @@
+.m-notification {
+  padding: 0.5rem 0;
+
+  &__content {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &__bulletContainer {
+    display: inline-block;
+    vertical-align: middle;
+    padding-right: 1rem;
+  }
+
+  &__bullet {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: $color--bullet;
+  }
+
+  &__createdOn {
+    padding-top: 0.2rem;
+    font-size: 0.9rem;
+  }
+
+  &--isRead {
+    .m-notification__bullet {
+      background-color: $color--lightGrey;
+    }
+  }
+}

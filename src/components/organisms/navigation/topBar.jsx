@@ -61,15 +61,20 @@ export default class extends React.Component<void, Props, State> {
             <Icon name="face" />
           </IconsBar>
         </div>
-        <Overlay state={this.state.notificationsOverlayState} type="Medium">
-          <OverlayTopBar title={t("notifications.notifications")} bullet={2}>
-            <IconsBar>
-              <Icon
-                name="clear"
-                onClick={this.onNotificationsCloseButtonClick.bind(this)}
-              />
-            </IconsBar>
-          </OverlayTopBar>
+        <Overlay
+          state={this.state.notificationsOverlayState}
+          type="Medium"
+          topbar={
+            <OverlayTopBar title={t("notifications.notifications")} bullet={2}>
+              <IconsBar>
+                <Icon
+                  name="clear"
+                  onClick={this.onNotificationsCloseButtonClick.bind(this)}
+                />
+              </IconsBar>
+            </OverlayTopBar>
+          }
+        >
           <div className="o-topBar__notifications">
             <Notifications data={store.session.notifications} />
           </div>

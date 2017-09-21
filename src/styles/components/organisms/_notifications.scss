@@ -1,0 +1,13 @@
+.o-notifications {
+  &__notification {
+    border-bottom: 1px solid $color--lightGrey;
+    &:first-child {
+      border-top: 1px solid $color--lightGrey;
+    }
+  }
+
+  &__loadMore {
+    text-align: center;
+    padding: 2rem 0;
+  }
+}

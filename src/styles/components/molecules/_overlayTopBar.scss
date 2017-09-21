@@ -6,8 +6,6 @@
   font-size: 1.5rem;
   line-height: 2rem;
   color: $color--grey;
-  padding: 1rem 0;
-  padding-bottom: 2rem;
 
   &__content {
     line-height: 1.5rem;
@@ -21,9 +19,10 @@
   &__bulletContainer {
     display: inline-block;
     margin-left: 0.5rem;
-    background-color: $color--main;
+    background-color: $color--progress;
     border-radius: 50%;
-    width: 1.5rem;
+    width: 2rem;
+    height: 2rem;
     text-align: center;
     position: relative;
   }
@@ -36,8 +35,8 @@
   }
 
   &__bullet {
-    font-size: 0.8rem;
-    line-height: 1.5rem;
+    font-size: 1rem;
+    line-height: 2rem;
     color: $color--white;
   }
 }

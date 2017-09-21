@@ -24,7 +24,26 @@
     position: absolute;
     width: calc(100% - 5rem);
     height: calc(100% - 5rem);
-    padding: 1rem;
+    box-sizing: border-box;
+  }
+  &__topbar {
+    position: absolute;
+    top: 0;
+    left: 2rem;
+    width: calc(100% - 4rem);
+    padding: 2rem 0;
+    box-sizing: border-box;
+    z-index: 1;
+    height: 4rem;
+  }
+  &__children {
+    overflow: auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 5.5rem);
+    padding: 0 2rem 2rem;
     box-sizing: border-box;
   }
   &__loader {

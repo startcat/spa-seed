@@ -38,12 +38,28 @@ export default class {
       progress.start();
       setTimeout(() => {
         progress.stop();
-        this.notifications = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(number => {
+        this.notifications = [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ].map(number => {
           return {
             id: number.toString(),
             createdOn: new Date(),
             text: "Notification " + number,
-            isRead: false
+            isRead: number > 2
           };
         });
         resolve();

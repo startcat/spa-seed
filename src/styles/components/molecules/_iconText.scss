@@ -1,0 +1,18 @@
+.m-iconText {
+  position: relative;
+  color: $color--grey;
+  line-height: 1rem;
+
+  &__iconContainer {
+    vertical-align: middle;
+    display: inline-block;
+    font-size: 130%;
+    padding-right: 0.2em;
+  }
+  &__text {
+    vertical-align: middle;
+    display: inline-block;
+    text-align: center;
+    font-size: inherit;
+  }
+}

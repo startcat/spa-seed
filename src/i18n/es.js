@@ -2,6 +2,9 @@ export default {
   app: {
     name: "START.CAT"
   },
+  common: {
+    loadMore: "Cargar más"
+  },
   menu: {
     dashboard: "Dashboard",
     users: "Usuarios",
