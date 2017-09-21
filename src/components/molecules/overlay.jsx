@@ -15,15 +15,6 @@ export default (props: Props) => {
   let className = "m-overlay";
   className += " m-overlay--" + props.state.toLowerCase();
   className += " m-overlay--" + (props.type || "Large").toLowerCase();
-  const switchObject: { [state: OverlayState]: any } = {
-    Hidden: "",
-    Loading: (
-      <div className="m-overlay__loader">
-        <Loader />
-      </div>
-    ),
-    Visible: props.children
-  };
 
   if (props.state === "Hidden") {
     return null;
@@ -44,7 +35,7 @@ export default (props: Props) => {
                   </div>
                 : null}
               <div className="m-overlay__children">
-                {switchObject[props.state]}
+                {props.children}
               </div>
             </div>}
       </div>
