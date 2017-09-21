@@ -35,7 +35,7 @@ export default class extends React.Component<void, Props, State> {
       <div className={className}>
         <Form>
           <FormTitle title={t("profile.userData")} />
-          <FormRow>
+          <FormRow id={"1"}>
             <FormField label={t("profile.username")}>
               <Input
                 type="text"
@@ -59,7 +59,7 @@ export default class extends React.Component<void, Props, State> {
               />
             </FormField>
           </FormRow>
-          <FormRow>
+          <FormRow id={"2"}>
             <FormField label={t("profile.email")}>
               <Input
                 type="text"
@@ -75,11 +75,11 @@ export default class extends React.Component<void, Props, State> {
 
         <Form>
           <FormTitle title={t("profile.updatePassword")} />
-          <FormRow>
+          <FormRow id={"1"}>
             <FormField label={t("profile.password")}>
               <Input
                 type="password"
-                autoFocus={true}
+                autoFocus={false}
                 modifiers={[]}
                 isDisabled={true}
                 onChange={this.onChangeHandler}
