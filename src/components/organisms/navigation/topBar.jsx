@@ -40,6 +40,20 @@ export default class extends React.Component<void, Props, State> {
     this.setState({ notificationsOverlayState: "Hidden" });
   };
 
+  onKeyDownHandler = (e: KeyboardEvent) => {
+    if (e.key === "Escape") {
+      if (this.state.notificationsOverlayState === "Visible") {
+        this.onNotificationsCloseButtonClick();
+      }
+    }
+  };
+
+  // React LifeCycle
+
+  componentDidMount() {
+    window.addEventListener("keydown", this.onKeyDownHandler, true);
+  }
+
   // Render
 
   render() {
