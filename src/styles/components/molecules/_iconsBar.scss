@@ -1,6 +1,7 @@
 .m-iconsBar {
   &__icon {
     display: inline-block;
+    vertical-align: middle;
 
     &:not(:last-child) {
       padding-right: 1rem;

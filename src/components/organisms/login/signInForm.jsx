@@ -2,7 +2,7 @@
 
 import { default as React } from "react";
 import { Link } from "react-router-dom";
-import FormField from "components/molecules/formField";
+import FormField from "components/molecules/form/formField";
 import Input from "components/atoms/form/input";
 import Button from "components/atoms/form/button";
 import Loader from "components/atoms/loader";

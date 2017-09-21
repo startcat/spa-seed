@@ -33,6 +33,13 @@ export default {
     text: "Notificación"
   },
   profile: {
-    profile: "Mi Perfil"
+    profile: "Mi Perfil",
+    username: "Nombre de usuario",
+    name: "Nombre completo",
+    email: "Email",
+    updatePassword: "Actualizar contraseña",
+    password: "Contraseña",
+    password2: "Repite tu contraseña",
+    userData: "Datos de usuario"
   }
 };

@@ -13,8 +13,8 @@ export type Notification = {
 };
 
 export type Profile = {
-  username: string,
+  username?: string,
   password?: string,
-  email: string,
-  name: string
+  email?: string,
+  name?: string
 };

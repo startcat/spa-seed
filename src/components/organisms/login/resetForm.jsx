@@ -4,7 +4,7 @@ import { default as React } from "react";
 import Input from "components/atoms/form/input";
 import Button from "components/atoms/form/button";
 import Loader from "components/atoms/loader";
-import FormField from "components/molecules/formField";
+import FormField from "components/molecules/form/formField";
 import validate from "utils/validate";
 import { t } from "i18n";
 

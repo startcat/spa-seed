@@ -5,6 +5,7 @@ import type { TopBarState, OverlayState } from "domain/types/ui";
 import Notifications from "components/organisms/notifications";
 import Profile from "components/organisms/profile";
 import OverlayTopBar from "components/molecules/overlayTopBar";
+import Button from "components/atoms/form/button";
 import IconsBar from "components/molecules/iconsBar";
 import Icon from "components/atoms/icon";
 import Overlay from "components/molecules/overlay";
@@ -53,10 +54,15 @@ export default class extends React.Component<void, Props, State> {
     this.setState({ profileOverlayState: "Hidden" });
   };
 
+  onProfileSaveButtonClick = () => {};
+
   onKeyDownHandler = (e: KeyboardEvent) => {
     if (e.key === "Escape") {
       if (this.state.notificationsOverlayState === "Visible") {
         this.onNotificationsCloseButtonClick();
+      }
+      if (this.state.profileOverlayState === "Visible") {
+        this.onProfileCloseButtonClick();
       }
     }
   };
@@ -114,6 +120,10 @@ export default class extends React.Component<void, Props, State> {
           topbar={
             <OverlayTopBar title={t("profile.profile")}>
               <IconsBar>
+                <Icon
+                  name="save"
+                  onClick={this.onProfileSaveButtonClick.bind(this)}
+                />
                 <Icon
                   name="clear"
                   onClick={this.onProfileCloseButtonClick.bind(this)}

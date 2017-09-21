@@ -1,0 +1,10 @@
+.m-formTitle {
+  padding: 0.5rem;
+  display: table-caption;
+  background-color: $color--lightGrey;
+  box-sizing: border-box;
+  border-radius: $borderRadius--tableHeaders;
+  &__title {
+    color: $color--darkGrey;
+  }
+}

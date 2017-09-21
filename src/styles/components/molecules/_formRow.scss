@@ -1,0 +1,14 @@
+.m-formRow {
+  display: table-row;
+  &__cell {
+    display: table-cell;
+    padding: 0.75rem 0;
+    padding-right: 2rem;
+    &:last-child {
+      padding-right: 0;
+      &:first-child {
+        padding-right: 2rem;
+      }
+    }
+  }
+}
