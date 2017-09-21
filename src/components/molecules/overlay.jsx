@@ -18,7 +18,7 @@ export default (props: Props) => {
   className += " m-overlay--" + (props.type || "Large").toLowerCase();
 
   return (
-    <Transition in={props.state !== "Hidden"} timeout={150}>
+    <Transition in={props.state !== "Hidden"} timeout={250}>
       {state => {
         return (
           <div className={className + (" m-overlay--" + state)}>
