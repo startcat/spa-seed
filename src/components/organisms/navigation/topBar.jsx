@@ -3,6 +3,7 @@
 import { default as React } from "react";
 import type { TopBarState, OverlayState } from "domain/types/ui";
 import Notifications from "components/organisms/notifications";
+import Profile from "components/organisms/profile";
 import OverlayTopBar from "components/molecules/overlayTopBar";
 import IconsBar from "components/molecules/iconsBar";
 import Icon from "components/atoms/icon";
@@ -15,7 +16,8 @@ import { t } from "i18n";
 
 type Props = ?TopBarState;
 type State = {
-  notificationsOverlayState: OverlayState
+  notificationsOverlayState: OverlayState,
+  profileOverlayState: OverlayState
 };
 
 // Class Component
@@ -25,7 +27,8 @@ export default class extends React.Component<void, Props, State> {
 
   props: Props;
   state: State = {
-    notificationsOverlayState: "Hidden"
+    notificationsOverlayState: "Hidden",
+    profileOverlayState: "Hidden"
   };
 
   // Event Handlers
@@ -38,6 +41,16 @@ export default class extends React.Component<void, Props, State> {
 
   onNotificationsCloseButtonClick = () => {
     this.setState({ notificationsOverlayState: "Hidden" });
+  };
+
+  onProfileButtonClick = async () => {
+    this.setState({ profileOverlayState: "Loading" });
+    await store.session.getProfile();
+    this.setState({ profileOverlayState: "Visible" });
+  };
+
+  onProfileCloseButtonClick = () => {
+    this.setState({ profileOverlayState: "Hidden" });
   };
 
   onKeyDownHandler = (e: KeyboardEvent) => {
@@ -72,9 +85,10 @@ export default class extends React.Component<void, Props, State> {
               onClick={this.onNotificationsButtonClick.bind(this)}
               bullet={this.props ? this.props.notifications : null}
             />
-            <Icon name="face" />
+            <Icon name="face" onClick={this.onProfileButtonClick.bind(this)} />
           </IconsBar>
         </div>
+
         <Overlay
           state={this.state.notificationsOverlayState}
           type="Medium"
@@ -91,6 +105,25 @@ export default class extends React.Component<void, Props, State> {
         >
           <div className="o-topBar__notifications">
             <Notifications data={store.session.notifications} />
+          </div>
+        </Overlay>
+
+        <Overlay
+          state={this.state.profileOverlayState}
+          type="Medium"
+          topbar={
+            <OverlayTopBar title={t("profile.profile")}>
+              <IconsBar>
+                <Icon
+                  name="clear"
+                  onClick={this.onProfileCloseButtonClick.bind(this)}
+                />
+              </IconsBar>
+            </OverlayTopBar>
+          }
+        >
+          <div className="o-topBar__profile">
+            <Profile data={store.session.profile} />
           </div>
         </Overlay>
       </div>

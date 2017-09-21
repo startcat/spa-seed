@@ -1,7 +1,7 @@
 /* @flow */
 
 import { observable } from "mobx";
-import type { Session, Notification } from "domain/types/session";
+import type { Session, Notification, Profile } from "domain/types/session";
 import store from "store";
 import progress from "utils/progress";
 
@@ -13,6 +13,8 @@ export default class {
   @observable session: ?Session = null;
 
   @observable notifications: Array<Notification> = [];
+
+  @observable profile: ?Profile = null;
 
   // Initialization
 
@@ -38,23 +40,7 @@ export default class {
       progress.start();
       setTimeout(() => {
         progress.stop();
-        this.notifications = [
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9,
-          10,
-          11,
-          12,
-          13,
-          14,
-          15
-        ].map(number => {
+        this.notifications = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(number => {
           return {
             id: number.toString(),
             createdOn: new Date(),
@@ -62,6 +48,21 @@ export default class {
             isRead: number > 2
           };
         });
+        resolve();
+      }, 1000);
+    });
+  }
+
+  async getProfile() {
+    return new Promise(resolve => {
+      progress.start();
+      setTimeout(() => {
+        progress.stop();
+        this.profile = {
+          username: "46405604E",
+          email: "juancarlos.vinas@start.cat",
+          name: "Juan Carlos Viñas"
+        };
         resolve();
       }, 1000);
     });

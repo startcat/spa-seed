@@ -31,5 +31,8 @@ export default {
     notifications: "Notificaciones",
     date: "Fecha",
     text: "Notificación"
+  },
+  profile: {
+    profile: "Mi Perfil"
   }
 };

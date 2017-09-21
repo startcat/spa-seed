@@ -11,3 +11,10 @@ export type Notification = {
   text: string,
   isRead: boolean
 };
+
+export type Profile = {
+  username: string,
+  password?: string,
+  email: string,
+  name: string
+};

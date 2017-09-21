@@ -10,7 +10,7 @@ export type TopBarState = {
   notifications: number
 };
 
-export type OverlayState = "Hidden" | "Loading" | "Visible";
+export type OverlayState = "Hidden" | "Loading" | "Visible" | "Dirty";
 export type OverlayType = "Large" | "Medium" | "Small";
 
 export type TableColumn = {
