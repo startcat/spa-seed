@@ -17,20 +17,15 @@ export default (props: Props) => {
   className += " m-overlay--" + props.state.toLowerCase();
   className += " m-overlay--" + (props.type || "Large").toLowerCase();
 
-  if (props.state === "Hidden") {
-    return null;
-  } else {
-    return (
-      <Transition timeout={300}>
-        {state => {
-          return (
-            <div className={className}>
-              <div
-                className={
-                  "m-overlay__background m-overlay__background--" + state
-                }
-              />
-              {props.state === "Loading"
+  return (
+    <Transition in={props.state !== "Hidden"} timeout={150}>
+      {state => {
+        return (
+          <div className={className + (" m-overlay--" + state)}>
+            <div className={"m-overlay__background"} />
+            {props.state === "Hidden"
+              ? null
+              : props.state === "Loading"
                 ? <div className="m-overlay__content">
                     <div className="m-overlay__loader">
                       <Loader />
@@ -46,10 +41,9 @@ export default (props: Props) => {
                       {props.children}
                     </div>
                   </div>}
-            </div>
-          );
-        }}
-      </Transition>
-    );
-  }
+          </div>
+        );
+      }}
+    </Transition>
+  );
 };
