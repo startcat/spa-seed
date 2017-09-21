@@ -5,7 +5,6 @@ import type { TopBarState, OverlayState } from "domain/types/ui";
 import Notifications from "components/organisms/notifications";
 import Profile from "components/organisms/profile";
 import OverlayTopBar from "components/molecules/overlayTopBar";
-import Button from "components/atoms/form/button";
 import IconsBar from "components/molecules/iconsBar";
 import Icon from "components/atoms/icon";
 import Overlay from "components/molecules/overlay";
@@ -54,7 +53,13 @@ export default class extends React.Component<void, Props, State> {
     this.setState({ profileOverlayState: "Hidden" });
   };
 
-  onProfileSaveButtonClick = () => {};
+  onProfileSaveButtonClick = () => {
+    this.setState({ profileOverlayState: "Visible" });
+  };
+
+  onProfileDirtyChange = () => {
+    this.setState({ profileOverlayState: "Invalid" });
+  };
 
   onKeyDownHandler = (e: KeyboardEvent) => {
     if (e.key === "Escape") {
@@ -121,10 +126,23 @@ export default class extends React.Component<void, Props, State> {
             <OverlayTopBar title={t("profile.profile")}>
               <IconsBar>
                 <Icon
+                  modifiers={[
+                    this.state.profileOverlayState === "Invalid"
+                      ? "invalid"
+                      : "",
+                    this.state.profileOverlayState === "Valid" ? "valid" : ""
+                  ]}
                   name="save"
                   onClick={this.onProfileSaveButtonClick.bind(this)}
                 />
                 <Icon
+                  modifiers={[
+                    ["Invalid", "Valid"].indexOf(
+                      this.state.profileOverlayState
+                    ) !== -1
+                      ? "dirty"
+                      : ""
+                  ]}
                   name="clear"
                   onClick={this.onProfileCloseButtonClick.bind(this)}
                 />
@@ -133,7 +151,10 @@ export default class extends React.Component<void, Props, State> {
           }
         >
           <div className="o-topBar__profile">
-            <Profile data={store.session.profile} />
+            <Profile
+              data={store.session.profile}
+              onDirtyChange={this.onProfileDirtyChange.bind(this)}
+            />
           </div>
         </Overlay>
       </div>

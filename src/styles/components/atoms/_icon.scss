@@ -1,6 +1,7 @@
 .a-icon {
   display: inline;
   position: relative;
+  transition: $transition--color, $transition--opacity;
 
   &__icon {
     vertical-align: middle;
@@ -21,10 +22,24 @@
     left: 50%;
   }
 
-  &__clickable {
+  &--clickable {
     cursor: pointer;
     &:hover {
       color: $color--main;
     }
+  }
+
+  &--dirty {
+    color: $color--dirty;
+  }
+
+  &--valid {
+    color: $color--valid;
+  }
+
+  &--invalid {
+    opacity: 0.5;
+    cursor: default;
+    color: inherit !important;
   }
 }

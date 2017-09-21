@@ -33,6 +33,9 @@ $color--gradient2: #fe4645;
 $color--progress: #6acd60;
 $color--tableHeaders: #6acd60;
 $color--bullet: #6acd60;
+$color--dirty: orange;
+$color--valid: #6acd60;
+$color--invalid: red;
 
 /**
  * Responsive Breakpoints (Mobile First)
@@ -57,6 +60,7 @@ $borderRadius--tableHeaders: 3px;
 */
 
 $transition--opacity: opacity .15s ease-in-out;
+$transition--color: color .15s ease-in-out;
 
 /**
 * Navigation

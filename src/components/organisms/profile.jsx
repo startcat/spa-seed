@@ -3,7 +3,6 @@
 import { default as React } from "react";
 import { t } from "i18n";
 import type { Profile } from "domain/types/session";
-import Button from "components/atoms/form/button";
 import Input from "components/atoms/form/input";
 import Form from "components/molecules/form/form";
 import FormField from "components/molecules/form/formField";
@@ -12,7 +11,7 @@ import FormTitle from "components/molecules/form/formTitle";
 
 // Types
 
-type Props = { data: Profile };
+type Props = { data: Profile, onDirtyChange?: Function };
 type State = {};
 
 // Class Component
@@ -25,7 +24,11 @@ export default class extends React.Component<void, Props, State> {
 
   // Event Handlers
 
-  onChangeHandler = () => {};
+  onChangeHandler = () => {
+    if (this.props.onDirtyChange) {
+      this.props.onDirtyChange();
+    }
+  };
 
   // Render
 
