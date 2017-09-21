@@ -6,9 +6,11 @@ export default (props: Props) => {
   let className = "m-formRow";
   return (
     <div key={props.id} className={className}>
-      {(props.children.map ? props.children : [props.children]).map(item => {
+      {(props.children.map
+        ? props.children
+        : [props.children]).map((item, index) => {
         return (
-          <div className="m-formRow__cell">
+          <div key={index} className="m-formRow__cell">
             {item}
           </div>
         );

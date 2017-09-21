@@ -2,6 +2,7 @@
 
 import Loader from "components/atoms/loader";
 import OverlayTopbar from "components/molecules/overlayTopbar";
+import Transition from "react-transition-group/Transition";
 import type { OverlayState, OverlayType } from "domain/types/ui";
 
 type Props = {
@@ -20,25 +21,35 @@ export default (props: Props) => {
     return null;
   } else {
     return (
-      <div className={className}>
-        <div className="m-overlay__background" />
-        {props.state === "Loading"
-          ? <div className="m-overlay__content">
-              <div className="m-overlay__loader">
-                <Loader />
-              </div>
-            </div>
-          : <div className="m-overlay__content">
-              {props.topbar
-                ? <div className="m-overlay__topbar">
-                    {props.topbar}
+      <Transition timeout={300}>
+        {state => {
+          return (
+            <div className={className}>
+              <div
+                className={
+                  "m-overlay__background m-overlay__background--" + state
+                }
+              />
+              {props.state === "Loading"
+                ? <div className="m-overlay__content">
+                    <div className="m-overlay__loader">
+                      <Loader />
+                    </div>
                   </div>
-                : null}
-              <div className="m-overlay__children">
-                {props.children}
-              </div>
-            </div>}
-      </div>
+                : <div className="m-overlay__content">
+                    {props.topbar
+                      ? <div className="m-overlay__topbar">
+                          {props.topbar}
+                        </div>
+                      : null}
+                    <div className="m-overlay__children">
+                      {props.children}
+                    </div>
+                  </div>}
+            </div>
+          );
+        }}
+      </Transition>
     );
   }
 };

@@ -5,7 +5,7 @@ type Props = { title: string, subtitle?: string };
 export default (props: Props) => {
   let className = "m-formTitle";
   return (
-    <div className={className}>
+    <div key={props.title} className={className}>
       <div className="m-formTitle__title">
         {props.title}
       </div>
