@@ -61,6 +61,8 @@ Antes de trabajar con este seed de proyecto, deberías conocer lo siguiente...
 * Todos los cambios en el stado se hacen desde "actions"
 * Sobre el Domain solo hacemos lecturas directamente, los updates se hacen vía actions
 * Todo el asincronismo lo tratamos con async/await
+* Los modificadores "--" de BEM solo los aplicamos a la clase parent del bloque
+* Los components de tipo átomo, molécula y organismo pueden ser clase, páginas y template siempre stateless
 
 # FAQ
 

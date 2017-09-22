@@ -4,6 +4,10 @@
   left: 0;
   width: 100%;
   height: 100%;
+  transition: $transition--overlayBackground;
+  opacity: 1;
+
+  // Elements
 
   &__background {
     position: absolute;
@@ -12,12 +16,9 @@
     width: 100%;
     height: 100%;
     background: $gradient--base;
-    opacity: 0;
-    transition: $transition--overlayBackground;
+    opacity: 0.9;
   }
-  &--hidden {
-    display: none;
-  }
+
   &__content {
     @include centered();
     background-color: $color--white;
@@ -27,6 +28,7 @@
     height: calc(100% - 5rem);
     box-sizing: border-box;
   }
+
   &__topbar {
     position: absolute;
     top: 0;
@@ -37,6 +39,7 @@
     z-index: 1;
     height: 4rem;
   }
+
   &__children {
     overflow: auto;
     position: absolute;
@@ -47,9 +50,17 @@
     padding: 0 2rem 2rem;
     box-sizing: border-box;
   }
+
   &__loader {
     @include centered();
   }
+
+  // Modifiers
+
+  &--hidden {
+    display: none;
+  }
+
   &--medium {
     .m-overlay__content {
       max-width: $width--overlayMedium;
@@ -64,26 +75,11 @@
   }
 
   &--entering {
-    .m-overlay__background {
-      opacity: 0;
-    }
+    opacity: 0;
   }
 
-  &--entered {
-    .m-overlay__background {
-      opacity: 0.9;
-    }
-  }
   &--exiting {
     display: block;
-    .m-overlay__background {
-      opacity: 0;
-    }
-  }
-
-  &--exited {
-    .m-overlay__background {
-      opacity: 0;
-    }
+    opacity: 0;
   }
 }
