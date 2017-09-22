@@ -5,6 +5,9 @@ export default {
   common: {
     loadMore: "Cargar más"
   },
+  errors: {
+    required: "Este campo es obligatorio"
+  },
   menu: {
     dashboard: "Dashboard",
     users: "Usuarios",

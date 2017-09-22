@@ -12,6 +12,9 @@ type Props = {
 
 export default (props: Props) => {
   let className = "m-formField";
+  if (props.error) {
+    className += " m-formField--error";
+  }
   return (
     <div className={className}>
       <div className="m-formField__input">

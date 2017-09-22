@@ -12,7 +12,7 @@ import FormTitle from "components/molecules/form/formTitle";
 // Types
 
 type Props = { data: Profile, onDirtyChange?: Function };
-type State = {};
+type State = { errors: { [string]: string } };
 type FormFields = {
   username: ?string,
   name: ?string,
@@ -27,7 +27,7 @@ export default class extends React.Component<void, Props, State> {
   // Private properties
 
   props: Props;
-  state: State = {};
+  state: State = { errors: {} };
   usernameInput: Input;
   nameInput: Input;
   emailInput: Input;
@@ -38,7 +38,8 @@ export default class extends React.Component<void, Props, State> {
 
   onChangeHandler = () => {
     if (this.props.onDirtyChange) {
-      this.props.onDirtyChange();
+      this.validate(this.getJSON());
+      this.props.onDirtyChange && this.props.onDirtyChange();
     }
   };
 
@@ -51,11 +52,14 @@ export default class extends React.Component<void, Props, State> {
         <Form>
           <FormTitle title={t("profile.userData")} />
           <FormRow id="2">
-            <FormField label={t("profile.username")} isRequired={true}>
+            <FormField
+              label={t("profile.username")}
+              isRequired={true}
+              error={this.state.errors["username"]}
+            >
               <Input
                 type="text"
                 autoFocus={true}
-                modifiers={[]}
                 onChange={this.onChangeHandler}
                 value={this.props.data.username}
                 ref={input => {
@@ -63,11 +67,14 @@ export default class extends React.Component<void, Props, State> {
                 }}
               />
             </FormField>
-            <FormField label={t("profile.name")} isRequired={true}>
+            <FormField
+              label={t("profile.name")}
+              isRequired={true}
+              error={this.state.errors["name"]}
+            >
               <Input
                 type="text"
                 autoFocus={false}
-                modifiers={[]}
                 onChange={this.onChangeHandler}
                 value={this.props.data.name}
                 ref={input => {
@@ -77,12 +84,16 @@ export default class extends React.Component<void, Props, State> {
             </FormField>
           </FormRow>
           <FormRow id="3">
-            <FormField label={t("profile.email")} isRequired={true}>
+            <FormField
+              label={t("profile.email")}
+              isRequired={true}
+              error={this.state.errors["email"]}
+            >
               <Input
                 type="text"
                 autoFocus={false}
-                modifiers={[]}
                 onChange={this.onChangeHandler}
+                value={this.props.data.email}
                 ref={input => {
                   this.emailInput = input;
                 }}
@@ -94,25 +105,27 @@ export default class extends React.Component<void, Props, State> {
         <Form>
           <FormTitle title={t("profile.updatePassword")} />
           <FormRow id="2">
-            <FormField label={t("profile.password1")}>
+            <FormField
+              label={t("profile.password1")}
+              error={this.state.errors["password1"]}
+            >
               <Input
                 type="password"
                 autoFocus={false}
-                modifiers={[]}
                 onChange={this.onChangeHandler}
-                value={this.props.data.username}
                 ref={input => {
                   this.password1Input = input;
                 }}
               />
             </FormField>
-            <FormField label={t("profile.password2")}>
+            <FormField
+              label={t("profile.password2")}
+              error={this.state.errors["password2"]}
+            >
               <Input
                 type="password"
                 autoFocus={false}
-                modifiers={[]}
                 onChange={this.onChangeHandler}
-                value={this.props.data.name}
                 ref={input => {
                   this.password2Input = input;
                 }}
@@ -136,7 +149,19 @@ export default class extends React.Component<void, Props, State> {
     };
   };
 
-  validate = (json: FormFields) => {
-    return true;
+  validate = (json: FormFields): boolean => {
+    const errors: { [string]: string } = {};
+
+    // Required Fields
+
+    ["username", "name", "email"].forEach(field => {
+      if (!json[field]) {
+        errors[field] = t("errors.required");
+      }
+    });
+
+    this.setState({ errors: errors });
+
+    return Object.keys(errors).length > 0;
   };
 }

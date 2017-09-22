@@ -19,7 +19,7 @@ export default (props: Props) => {
 
   return (
     <Transition in={props.state !== "Hidden"} timeout={250}>
-      {state => {
+      {(state: string) => {
         return (
           <div className={className + (" m-overlay--" + state)}>
             <div className={"m-overlay__background"} />

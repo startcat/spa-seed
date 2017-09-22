@@ -14,7 +14,7 @@ export default class {
 
   @observable notifications: Array<Notification> = [];
 
-  @observable profile: Profile = null;
+  @observable profile: Profile = {};
 
   // Initialization
 

@@ -1,12 +1,12 @@
 .m-formField {
   position: relative;
   padding-top: 1rem;
+  color: $color--grey;
 
   &__label {
     transition: top 0.10s ease-out;
     text-align: left;
     font-size: 0.9rem;
-    color: $color--grey;
     position: absolute;
     top: 0;
     z-index: -1;
@@ -28,6 +28,16 @@
       height: 1rem;
       background-color: $color--warning;
     }
+  }
+
+  &__error {
+    font-size: 0.9rem;
+    color: $color--error;
+    padding-top: 0.25rem;
+  }
+
+  &--error {
+    color: $color--error;
   }
 
   /* stylelint-disable */

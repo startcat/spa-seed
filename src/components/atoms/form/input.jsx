@@ -6,7 +6,7 @@ type Props = {
   type?: string,
   onChange?: Function,
   autoFocus?: boolean,
-  modifiers: Array<string>
+  modifiers?: Array<string>
 };
 
 type State = { hasFocus: boolean, isEmpty: boolean };
