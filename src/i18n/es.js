@@ -38,7 +38,7 @@ export default {
     name: "Nombre completo",
     email: "Email",
     updatePassword: "Actualizar contraseña",
-    password: "Contraseña",
+    password1: "Contraseña",
     password2: "Repite tu contraseña",
     userData: "Datos de usuario"
   }
