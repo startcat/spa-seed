@@ -106,4 +106,6 @@ export default class extends React.Component<void, Props, State> {
       </div>
     );
   }
+
+  // Public Methods
 }
