@@ -17,6 +17,19 @@
     z-index: 1;
   }
 
+  &__required {
+    display: inline-block;
+    color: $color--warning;
+    padding-left: 0.1rem;
+    font-size: 1.3rem;
+    &:after {
+      content: '';
+      width: 1rem;
+      height: 1rem;
+      background-color: $color--warning;
+    }
+  }
+
   /* stylelint-disable */
 
   [class*="--hasFocus"],

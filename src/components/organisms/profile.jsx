@@ -51,12 +51,11 @@ export default class extends React.Component<void, Props, State> {
         <Form>
           <FormTitle title={t("profile.userData")} />
           <FormRow id="2">
-            <FormField label={t("profile.username")}>
+            <FormField label={t("profile.username")} isRequired={true}>
               <Input
                 type="text"
                 autoFocus={true}
                 modifiers={[]}
-                isDisabled={true}
                 onChange={this.onChangeHandler}
                 value={this.props.data.username}
                 ref={input => {
@@ -64,12 +63,11 @@ export default class extends React.Component<void, Props, State> {
                 }}
               />
             </FormField>
-            <FormField label={t("profile.name")}>
+            <FormField label={t("profile.name")} isRequired={true}>
               <Input
                 type="text"
                 autoFocus={false}
                 modifiers={[]}
-                isDisabled={true}
                 onChange={this.onChangeHandler}
                 value={this.props.data.name}
                 ref={input => {
@@ -79,12 +77,11 @@ export default class extends React.Component<void, Props, State> {
             </FormField>
           </FormRow>
           <FormRow id="3">
-            <FormField label={t("profile.email")}>
+            <FormField label={t("profile.email")} isRequired={true}>
               <Input
                 type="text"
                 autoFocus={false}
                 modifiers={[]}
-                isDisabled={true}
                 onChange={this.onChangeHandler}
                 ref={input => {
                   this.emailInput = input;
@@ -102,7 +99,6 @@ export default class extends React.Component<void, Props, State> {
                 type="password"
                 autoFocus={false}
                 modifiers={[]}
-                isDisabled={true}
                 onChange={this.onChangeHandler}
                 value={this.props.data.username}
                 ref={input => {
@@ -115,7 +111,6 @@ export default class extends React.Component<void, Props, State> {
                 type="password"
                 autoFocus={false}
                 modifiers={[]}
-                isDisabled={true}
                 onChange={this.onChangeHandler}
                 value={this.props.data.name}
                 ref={input => {
@@ -141,5 +136,7 @@ export default class extends React.Component<void, Props, State> {
     };
   };
 
-  validate = (json: FormFields) => {};
+  validate = (json: FormFields) => {
+    return true;
+  };
 }

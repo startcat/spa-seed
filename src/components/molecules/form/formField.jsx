@@ -24,6 +24,9 @@ export default (props: Props) => {
             : null}
           <div className="m-formField__caption">
             {props.label}
+            {props.isRequired
+              ? <div className="m-formField__required">*</div>
+              : null}
           </div>
         </div>
       </div>
