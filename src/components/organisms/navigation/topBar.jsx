@@ -63,10 +63,9 @@ export default class extends React.Component<void, Props, State> {
 
   onKeyDownHandler = (e: KeyboardEvent) => {
     if (e.key === "Escape") {
-      if (this.state.notificationsOverlayState === "Visible") {
+      if (this.state.notificationsOverlayState !== "Hidden") {
         this.onNotificationsCloseButtonClick();
-      }
-      if (this.state.profileOverlayState === "Visible") {
+      } else if (this.state.profileOverlayState !== "Hidden") {
         this.onProfileCloseButtonClick();
       }
     }
