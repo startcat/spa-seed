@@ -9,6 +9,6 @@ export type DashboardSection = {
     title: string,
     columns: 1 | 2 | 3,
     options: Object,
-    data: Object
+    data: Object | number
   }>
 };

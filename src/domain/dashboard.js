@@ -53,7 +53,7 @@ export default class {
               {
                 columns: 1,
                 id: "1",
-                type: "line",
+                type: "Line",
                 title: "Gráfica 1",
                 options: Object.assign({}, options),
                 data: {
@@ -67,8 +67,16 @@ export default class {
               },
               {
                 columns: 1,
+                id: "kpi-1",
+                type: "Perc",
+                title: "Gráfica 1",
+                options: {},
+                data: 100
+              },
+              {
+                columns: 1,
                 id: "2",
-                type: "bar",
+                type: "Bar",
                 title: "Gráfica 1",
                 options: Object.assign({}, options),
                 data: {
@@ -82,8 +90,8 @@ export default class {
               },
               {
                 columns: 1,
-                id: "2",
-                type: "bar",
+                id: "3",
+                type: "Line",
                 title: "Gráfica 1",
                 options: Object.assign({}, options),
                 data: {
@@ -97,8 +105,8 @@ export default class {
               },
               {
                 columns: 1,
-                id: "2",
-                type: "bar",
+                id: "4",
+                type: "Bar",
                 title: "Gráfica 1",
                 options: Object.assign({}, options),
                 data: {
@@ -112,8 +120,8 @@ export default class {
               },
               {
                 columns: 1,
-                id: "2",
-                type: "bar",
+                id: "5",
+                type: "Bar",
                 title: "Gráfica 1",
                 options: Object.assign({}, options),
                 data: {

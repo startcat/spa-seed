@@ -2,6 +2,7 @@
 
 import { default as React } from "react";
 import Widget from "components/molecules/widget";
+import KPI from "components/molecules/kpi";
 import Chart from "components/molecules/chart";
 import Section from "components/molecules/section";
 import Loader from "components/atoms/loader";
@@ -51,14 +52,23 @@ export default class extends React.Component<void, Props, State> {
                     }
                   >
                     <Section title={section.title}>
-                      {section.content.map(chart => {
+                      {section.content.map(item => {
                         return (
-                          <Widget title={chart.title} columns={chart.columns}>
-                            <Chart
-                              type={chart.type}
-                              data={mobx.toJS(chart.data)}
-                              options={mobx.toJS(chart.options)}
-                            />
+                          <Widget
+                            title={item.title}
+                            columns={item.columns || 1}
+                          >
+                            {["Number", "Perc"].indexOf(item.type) !== -1
+                              ? <KPI
+                                  type={item.type}
+                                  data={mobx.toJS(item.data)}
+                                  options={mobx.toJS(item.options)}
+                                />
+                              : <Chart
+                                  type={item.type}
+                                  data={mobx.toJS(item.data)}
+                                  options={mobx.toJS(item.options)}
+                                />}
                           </Widget>
                         );
                       })}

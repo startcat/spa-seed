@@ -6,7 +6,7 @@ import { default as React } from "react";
 
 // Types
 
-type Props = { type: string, columns: number, data: Object, options: Object };
+type Props = { type: string, data: Object, options: Object };
 type State = {};
 
 // Class Component
@@ -23,7 +23,7 @@ export default class extends React.Component<void, Props, State> {
   componentDidMount() {
     if (this.props.data) {
       this.chart = new window.vendor.Chart(this.refs.canvas, {
-        type: this.props.type,
+        type: this.props.type.toLowerCase(),
         data: this.props.data,
         options: this.props.options
       });
