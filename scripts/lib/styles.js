@@ -8,6 +8,7 @@ const async = require("async");
 const fs = require("fs-extra");
 const sass = require("node-sass");
 const sassGlobImporter = require("sass-glob-importer");
+const sassJsonImporter = require("node-sass-json-importer");
 const postcss = require("postcss");
 const autoprefixer = require("autoprefixer");
 const stylelint = require("stylelint");
@@ -39,6 +40,18 @@ module.exports = (options, callback) => {
           });
       },
 
+      // Settings JSON to /build
+
+      cb => {
+        console.log(chalk.dim("[Styles] Settings (JSON)..."));
+        const settingsJson = fs.readFileSync(options.settingsSource);
+        const settingsJs =
+          "(function(){ window.settings=" + settingsJson + "})();";
+        fs.writeFile(options.settingsTarget, settingsJs, err => {
+          return cb(err);
+        });
+      },
+
       // Sass => CSS
 
       cb => {
@@ -46,7 +59,7 @@ module.exports = (options, callback) => {
         sass.render(
           {
             file: options.source,
-            importer: sassGlobImporter()
+            importer: [sassJsonImporter, sassGlobImporter()]
           },
           (err, result) => {
             console.log(chalk.dim("[Styles] Rendered"));

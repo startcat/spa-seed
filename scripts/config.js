@@ -27,6 +27,8 @@ module.exports = {
 
   APP_STYLES_ENTRY: path.join(SRC_FOLDER, "/styles/app.scss"),
   APP_STYLES_TARGET: path.join(BUILD_FOLDER, "/app.css"),
+  APP_STYLES_JSON_ENTRY: path.join(SRC_FOLDER, "/styles/_settings.json"),
+  APP_STYLES_JSON_TARGET: path.join(BUILD_FOLDER, "/styles.settings.js"),
 
   // Javascript (App)
 

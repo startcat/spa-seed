@@ -52,6 +52,7 @@
     "flow-typed": "2.1.5",
     "fs-extra": "4.0.1",
     "node-sass": "4.5.3",
+    "node-sass-json-importer": "3.0.2",
     "particlesjs": "2.0.2",
     "postcss": "6.0.8",
     "preprocessor": "1.4.0",

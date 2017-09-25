@@ -1,7 +1,6 @@
 /* @flow */
 
 import { observable } from "mobx";
-import store from "store";
 import progress from "utils/progress";
 import type { DashboardSection } from "domain/types/dashboard";
 
@@ -10,7 +9,7 @@ import type { DashboardSection } from "domain/types/dashboard";
 export default class {
   // Properties
 
-  @observable dashboard: ?Array<DashboardSection> = null;
+  @observable sections: ?Array<DashboardSection> = null;
 
   // Initialization
 
@@ -23,8 +22,21 @@ export default class {
       progress.start();
       setTimeout(() => {
         progress.stop();
-        this.dashboard = [
-          { id: "test1", title: "test1", content: [{ type: "hola", data: {} }] }
+        this.sections = [
+          {
+            id: "planificacion",
+            title: "Planificació",
+            content: [
+              {
+                columns: 3,
+                id: "1",
+                type: "hola",
+                title: "Gráfica 1",
+                options: {},
+                data: {}
+              }
+            ]
+          }
         ];
         resolve();
       }, 1000);

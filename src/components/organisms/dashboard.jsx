@@ -38,8 +38,8 @@ export default class extends React.Component<void, Props, State> {
           ? <div className="o-dashboard__loader">
               <Loader />
             </div>
-          : this.props.sections
-            ? this.props.sections.map(section => {
+          : store.dashboard.sections
+            ? store.dashboard.sections.map(section => {
                 return (
                   <div
                     key={section.id}
@@ -48,7 +48,9 @@ export default class extends React.Component<void, Props, State> {
                     }
                   >
                     <Section title={section.title}>
-                      {section.content}
+                      {section.content.map(chart => {
+                        return "Hola";
+                      })}
                     </Section>
                   </div>
                 );

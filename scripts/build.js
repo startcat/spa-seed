@@ -37,6 +37,8 @@ async.parallel(
         {
           source: config.APP_STYLES_ENTRY,
           target: config.APP_STYLES_TARGET,
+          settingsSource: config.APP_STYLES_JSON_ENTRY,
+          settingsTarget: config.APP_STYLES_JSON_TARGET,
           production: true
         },
         cb

@@ -75,7 +75,7 @@ http.createServer(app).listen(config.DEV_SERVER_PORT, () => {
 
       styles: cb => {
         const watcher = chokidar.watch(
-          path.join(config.SRC_FOLDER, "/**/*.scss"),
+          path.join(config.SRC_FOLDER, "/**/*.{scss,json}"),
           {
             persistent: true
           }
@@ -87,6 +87,8 @@ http.createServer(app).listen(config.DEV_SERVER_PORT, () => {
             {
               source: config.APP_STYLES_ENTRY,
               target: config.APP_STYLES_TARGET,
+              settingsSource: config.APP_STYLES_JSON_ENTRY,
+              settingsTarget: config.APP_STYLES_JSON_TARGET,
               production: false
             },
             () => {

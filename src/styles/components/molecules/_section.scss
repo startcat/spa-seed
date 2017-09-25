@@ -1,0 +1,12 @@
+.m-section {
+  &__title {
+    background-color: $color--lightGrey;
+    padding: 1rem;
+    border-radius: $borderRadius--tableHeaders;
+    font-size: 1.2rem;
+    color: $color--main;
+  }
+  &__content {
+    padding: 1rem 0;
+  }
+}
