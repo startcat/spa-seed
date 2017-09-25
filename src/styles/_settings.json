@@ -1,5 +1,7 @@
 {
   "color--main": "#ff5232",
+  "color--particles1": "#ff9d8c",
+  "color--particles2": "#ffedea",
   "color--black": "#222",
   "color--white": "#fff",
   "color--error": "red",

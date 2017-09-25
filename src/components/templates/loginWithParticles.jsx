@@ -29,7 +29,7 @@ export default (props: Props) => {
       <div className="t-loginWithParticles__half">
         <div className="t-loginWithParticles__background">
           <div className="t-loginWithParticles__particles">
-            <Particles hexColor="#ff9d8c" />
+            <Particles hexColor={window.settings["color--particles1"]} />
           </div>
           <div
             className="t-loginWithParticles__welcome"

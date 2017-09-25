@@ -13,7 +13,7 @@ export default (props: Props) => {
   return (
     <div className={className}>
       <div className="t-login__particles">
-        <Particles hexColor="#ffedea" />
+        <Particles hexColor={window.settings["color--particles2"]} />
       </div>
       <div className="t-login__logoContainer">
         <div className="t-login__logo" />

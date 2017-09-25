@@ -31,7 +31,6 @@
   },
 
   "globals": {
-    "t": true,
-    "settings": true
+    "t": true
   }
 }
