@@ -43,18 +43,14 @@ export default class extends React.Component<void, Props, State> {
               <Loader />
             </div>
           : store.dashboard.sections
-            ? store.dashboard.sections.map(section => {
+            ? store.dashboard.sections.map((section, index) => {
                 return (
-                  <div
-                    key={section.id}
-                    className={
-                      "o-dashboard__section o-dashboard__section--" + section.id
-                    }
-                  >
+                  <div key={index} className="o-dashboard__section">
                     <Section title={section.title}>
-                      {section.content.map(item => {
+                      {section.content.map((item, index) => {
                         return (
                           <Widget
+                            key={index}
                             title={item.title}
                             columns={item.columns || 1}
                           >
