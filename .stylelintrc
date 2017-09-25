@@ -9,7 +9,7 @@
     "at-rule-no-unknown": [true, {ignoreAtRules: ["mixin", "include"]}],
     "plugin/selector-bem-pattern": {
       "implicitComponents": "src/styles/components/**/*.scss",
-      "componentSelectors": "^\\.[a|m|o|t|p]-([a-zA-Z]+)(__[a-zA-Z]+(--[a-zA-Z]+)?)?(--[a-zA-Z]+)?$",
+      "componentSelectors": "^\\.[a|m|o|t|p]-([a-zA-Z0-9]+)(__[a-zA-Z0-9]+(--[a-zA-Z0-9]+)?)?(--[a-zA-Z0-9]+)?$",
       "utilitySelectors": "^\\.util-[a-z]+$"
     }
   }

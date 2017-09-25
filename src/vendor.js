@@ -12,3 +12,7 @@ delete window.Particles;
 window.vendor.nprogress = window.NProgress;
 delete window.NProgress;
 window.vendor.nprogress.configure({ showSpinner: false });
+
+// #include "node_modules/chart.js/dist/Chart.js"
+
+window.vendor.Chart = window.Chart;

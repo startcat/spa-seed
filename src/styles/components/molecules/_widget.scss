@@ -1,0 +1,29 @@
+.m-widget {
+  float: left;
+  padding: 0 0.5rem;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+
+  &__container {
+    border: 1px solid $color--lightGrey;
+    border-radius: $borderRadius--tableHeaders;
+    box-shadow: $boxShadow--right;
+    padding: 1rem;
+  }
+
+  &__title {
+    padding-bottom: 1rem;
+  }
+
+  &--1 {
+    width: 33.33%;
+  }
+
+  &--2 {
+    width: 66.66%;
+  }
+
+  &--3 {
+    width: 100%;
+  }
+}

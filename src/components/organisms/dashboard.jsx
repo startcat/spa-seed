@@ -1,9 +1,12 @@
 /* @flow */
 
 import { default as React } from "react";
+import Widget from "components/molecules/widget";
+import Chart from "components/molecules/chart";
 import Section from "components/molecules/section";
 import Loader from "components/atoms/loader";
 import store from "store";
+import { default as mobx } from "mobx";
 
 // Types
 
@@ -49,7 +52,15 @@ export default class extends React.Component<void, Props, State> {
                   >
                     <Section title={section.title}>
                       {section.content.map(chart => {
-                        return "Hola";
+                        return (
+                          <Widget title={chart.title} columns={chart.columns}>
+                            <Chart
+                              type={chart.type}
+                              data={mobx.toJS(chart.data)}
+                              options={mobx.toJS(chart.options)}
+                            />
+                          </Widget>
+                        );
                       })}
                     </Section>
                   </div>
