@@ -10,6 +10,7 @@
     "build": "node scripts/build.js"
   },
   "dependencies": {
+    "chart.js": "2.7.0",
     "date-fns": "1.28.5",
     "flow": "0.2.3",
     "i18next": "9.0.0",
